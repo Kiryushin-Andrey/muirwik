@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.utils.addToStdlib.min
 
 group = "com.ccfraser.muirwik"
-version = "0.6.7"
+version = "0.6.7-kotlin-IR-1.5"
 description = "Test Application for Muirwik (a Material UI React wrapper written in Kotlin)"
 
 plugins {
@@ -11,15 +11,15 @@ plugins {
 repositories {
     jcenter()
     mavenLocal()
-    maven { setUrl("http://dl.bintray.com/kotlin/kotlin-js-wrappers") }
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
 }
 
 dependencies {
-    val kotlinVersion = "1.4.20"
-    val kotlinJsVersion = "pre.129-kotlin-$kotlinVersion"
+    val kotlinVersion = "1.5.0"
+    val kotlinJsVersion = "pre.154-kotlin-$kotlinVersion"
 
     implementation(kotlin("stdlib-js", kotlinVersion))
-    implementation("org.jetbrains", "kotlin-styled", "5.2.0-$kotlinJsVersion")
+    implementation("org.jetbrains", "kotlin-styled", "5.2.3-$kotlinJsVersion")
     implementation(npm("react-hot-loader", "^4.12.20"))
     implementation(devNpm("webpack-bundle-analyzer", "^3.8.0"))
 

@@ -3,29 +3,29 @@ import java.io.FileInputStream
 import java.util.*
 
 group = "com.ccfraser.muirwik"
-version = "0.6.7"
+version = "0.6.7-kotlin-IR-1.5"
 description = "Muirwik Components - a Material UI React wrapper written in Kotlin"
 
 plugins {
-    id("org.jetbrains.kotlin.js") // Version needs to be specified in root project
+    kotlin("js") // Version needs to be specified in root project
     `maven-publish`
     id("com.jfrog.bintray") version "1.8.4"
 }
 
 repositories {
     jcenter()
-    maven("http://dl.bintray.com/kotlin/kotlin-js-wrappers")
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
 }
 
 dependencies {
-    val kotlinVersion = "1.4.20"
-    val kotlinJsVersion = "pre.129-kotlin-$kotlinVersion"
+    val kotlinVersion = "1.5.0"
+    val kotlinJsVersion = "pre.154-kotlin-$kotlinVersion"
     val kotlinReactVersion = "17.0.0-$kotlinJsVersion"
 
     implementation(kotlin("stdlib-js", kotlinVersion))
     implementation("org.jetbrains", "kotlin-react", kotlinReactVersion)
     implementation("org.jetbrains", "kotlin-react-dom", kotlinReactVersion)
-    implementation("org.jetbrains", "kotlin-styled", "5.2.0-$kotlinJsVersion")
+    implementation("org.jetbrains", "kotlin-styled", "5.2.3-$kotlinJsVersion")
 
     implementation(npm("@material-ui/core", "^4.11.0"))
     implementation(npm("@material-ui/lab", "4.0.0-alpha.56"))
