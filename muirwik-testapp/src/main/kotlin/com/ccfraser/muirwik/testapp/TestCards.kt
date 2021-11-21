@@ -138,7 +138,7 @@ class TestCards : RComponent<Props, State>() {
                             }
                         }
                         mCardMedia("/images/cards/live-from-space.jpg", "Live from space album cover") {
-                            css { css { height = 151.px; width = 151.px } }
+                            css { height = 151.px; width = 151.px }
                         }
                     }
                 }

@@ -13,11 +13,11 @@ repositories {
 }
 
 dependencies {
-    val kotlinVersion = "1.5.30"
-    val kotlinJsVersion = "pre.236-kotlin-$kotlinVersion"
+    val kotlinVersion = "1.6.0"
+    val kotlinJsVersion = "pre.268-kotlin-$kotlinVersion"
 
     implementation(kotlin("stdlib-js", kotlinVersion))
-    implementation("org.jetbrains.kotlin-wrappers", "kotlin-styled", "5.3.0-$kotlinJsVersion")
+    implementation("org.jetbrains.kotlin-wrappers", "kotlin-styled", "5.3.3-$kotlinJsVersion")
     implementation(npm("react-hot-loader", "^4.12.20"))
     implementation(devNpm("webpack-bundle-analyzer", "^3.8.0"))
 
