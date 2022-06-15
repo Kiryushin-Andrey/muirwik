@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.button
 
 import com.ccfraser.muirwik.components.*
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -46,7 +47,7 @@ fun RBuilder.mButtonGroup(
     disableFocusRipple: Boolean = false,
     disableRipple: Boolean = false,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MButtonGroupProps>? = null
 ) {
     createStyled(buttonGroupComponentType, className, handler) {

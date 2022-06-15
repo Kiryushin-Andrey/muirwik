@@ -1,6 +1,6 @@
 package com.ccfraser.muirwik.components
 
-import kotlinext.js.jsObject
+import kotlinx.js.jso
 import react.ComponentType
 import react.RBuilder
 import react.RHandler
@@ -51,7 +51,7 @@ fun RBuilder.mClickAwayListener(
     touchEvent: MClickAwayListenerTouchEvent = MClickAwayListenerTouchEvent.onTouchStart,
     handler: RHandler<MClickAwayListenerProps>? = null
 ) {
-    child(clickAwayListenerComponentType, jsObject()) {
+    child(clickAwayListenerComponentType, jso()) {
         attrs.mouseEvent = mouseEvent
         attrs.touchEvent = touchEvent
         attrs.onClickAway = onClickAway

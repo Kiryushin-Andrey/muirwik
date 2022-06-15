@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -39,7 +40,7 @@ enum class MBadgeAnchorOriginVertical {
 
 
 external interface MBadgeProps: StyledPropsWithCommonAttributes {
-    var badgeContent: ReactElement
+    var badgeContent: ReactElement<*>
     var component: String
     var invisible: Boolean
     var max: Number
@@ -59,11 +60,11 @@ fun RBuilder.mBadge(
     variant: MBadgeVariant = MBadgeVariant.standard,
     component: String? = "span",
     invisible: Boolean? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MBadgeProps>? = null
 ) {
     @Suppress("UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
-    val badgeContentAsElement = badgeContent.asDynamic() as ReactElement
+    val badgeContentAsElement = badgeContent.asDynamic() as ReactElement<*>
 
     mBadge(badgeContentAsElement, color, false, 99, variant, component, invisible, className, handler)
 }
@@ -76,24 +77,24 @@ fun RBuilder.mBadge(
     variant: MBadgeVariant = MBadgeVariant.standard,
     component: String? = "span",
     invisible: Boolean? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MBadgeProps>? = null
 ) {
     @Suppress("UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
-    val badgeContentAsElement = badgeContent.asDynamic() as ReactElement
+    val badgeContentAsElement = badgeContent.asDynamic() as ReactElement<*>
 
     mBadge(badgeContentAsElement, color, showZero, max, variant, component, invisible, className, handler)
 }
 
 fun RBuilder.mBadge(
-    badgeContent: ReactElement,
+    badgeContent: ReactElement<*>,
     color: MBadgeColor = MBadgeColor.default,
     showZero: Boolean = false,
     max: Number = 99,
     variant: MBadgeVariant = MBadgeVariant.standard,
     component: String? = "span",
     invisible: Boolean? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MBadgeProps>? = null
 ) {
     createStyled(badgeComponentType, className, handler) {
@@ -111,7 +112,7 @@ fun RBuilder.mBadge(
 fun RBuilder.mBadgeDot(
     color: MBadgeColor = MBadgeColor.default,
     invisible: Boolean? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MBadgeProps>? = null
 ) {
     createStyled(badgeComponentType, className, handler) {

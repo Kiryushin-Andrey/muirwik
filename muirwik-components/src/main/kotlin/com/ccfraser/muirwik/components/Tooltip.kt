@@ -1,9 +1,10 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import styled.StyledHandler
 
 
@@ -51,7 +52,7 @@ fun RBuilder.mTooltip(
     leaveDelay: Int? = null,
     leaveTouchDelay: Int? = null,
     id: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTooltipProps>? = null
 ) {
     createStyled(tooltipComponentType, className, handler) {

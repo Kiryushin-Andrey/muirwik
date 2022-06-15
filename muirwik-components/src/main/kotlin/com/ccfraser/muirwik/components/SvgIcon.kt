@@ -1,10 +1,8 @@
 package com.ccfraser.muirwik.components
 
-import kotlinext.js.jsObject
-import react.ComponentType
-import react.RBuilder
-import react.Props
-import react.createElement
+import csstype.ClassName
+import kotlinx.js.jso
+import react.*
 import styled.StyledHandler
 
 @JsModule("@material-ui/core/SvgIcon")
@@ -30,7 +28,7 @@ fun RBuilder.mSvgIcon(
     color: MIconColor = MIconColor.inherit,
     htmlColor: String? = null,
     fontSize: MIconFontSize = MIconFontSize.default,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSvgIconProps>? = null
 ) {
     createStyled(svgIconComponentType, className, handler) {
@@ -38,11 +36,15 @@ fun RBuilder.mSvgIcon(
         htmlColor?.let { attrs.htmlColor = it }
         attrs.fontSize = fontSize
 
-        val props: Props =  jsObject {  }
-        props.asDynamic().d = svgPath
+        val props: SVGPathProps = jso {
+            d = svgPath
+        }
 
-        childList.add(createElement("path", props))
+        childList.add(createElement(IntrinsicType("path"), props))
     }
 }
 
+external interface SVGPathProps : PropsWithClassName {
+    var d: String
+}
 

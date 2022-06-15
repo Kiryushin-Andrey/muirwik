@@ -4,6 +4,7 @@ import com.ccfraser.muirwik.components.MAvatarVariant
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.mAvatar
+import csstype.ClassName
 import react.ComponentType
 import react.Props
 import react.RBuilder
@@ -17,7 +18,7 @@ private external val listItemAvatarModule: dynamic
 private val listItemAvatarComponentType: ComponentType<MButtonBaseProps> = listItemAvatarModule.default
 
 fun RBuilder.mListItemAvatar(
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MButtonBaseProps>? = null
 ) {
     createStyled(listItemAvatarComponentType, className, handler)
@@ -32,7 +33,7 @@ fun RBuilder.mListItemAvatar(
     component: String = "div",
     imgProps: Props? = null,
     sizes: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MButtonBaseProps>? = null
 ) {
     createStyled(listItemAvatarComponentType, className, handler) {

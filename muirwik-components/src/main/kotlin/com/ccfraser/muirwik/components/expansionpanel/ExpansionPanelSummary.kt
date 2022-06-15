@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.expansionpanel
 
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.Props
 import react.RBuilder
@@ -15,16 +16,16 @@ private external val expansionPanelSummaryModule: dynamic
 private val expansionPanelSummaryComponentType: ComponentType<MExpansionPanelSummaryProps> = expansionPanelSummaryModule.default
 
 external interface MExpansionPanelSummaryProps : StyledPropsWithCommonAttributes {
-	var expandIcon: ReactElement
+	var expandIcon: ReactElement<*>
 	var iconButtonProps: Props
 }
 
 @Deprecated("Getting removed in Material-UI 5", ReplaceWith("mAccordionSummary(expandIcon, iconButtonProps, className, handler)",
 		"com.ccfraser.muirwik.components.accordion.mAccordionSummary"))
 fun RBuilder.mExpansionPanelSummary(
-	expandIcon: ReactElement? = null,
+	expandIcon: ReactElement<*>? = null,
 	iconButtonProps: Props? = null,
-	className: String? = null,
+	className: ClassName? = null,
 	handler: StyledHandler<MExpansionPanelSummaryProps>? = null
 ) {
 	createStyled(expansionPanelSummaryComponentType, className, handler) {

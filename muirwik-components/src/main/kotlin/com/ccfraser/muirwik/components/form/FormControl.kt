@@ -4,6 +4,7 @@ import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.toHyphenCase
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -60,7 +61,7 @@ fun RBuilder.mFormControl(
     required: Boolean = false,
     variant: MFormControlVariant = MFormControlVariant.standard,
     hiddenLabel: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFormControlProps>? = null
 ) {
     createStyled(formControlComponentType, className, handler) {

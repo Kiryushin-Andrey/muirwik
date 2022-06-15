@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.list
 
 import com.ccfraser.muirwik.components.*
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.*
 import styled.StyledHandler
@@ -61,7 +62,7 @@ fun RBuilder.mListItem(
     divider: Boolean = true,
     hRefOptions: HRefOptions? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListItemProps>? = null
 ) {
     mListItem(button = true, selected = selected, key = key, alignItems = alignItems, divider = divider,
@@ -89,7 +90,7 @@ fun RBuilder.mListItemWithIcon(
     useAvatar: Boolean = false,
     hRefOptions: HRefOptions? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListItemProps>? = null
 ) {
     mListItem(button = true, selected = selected, key = key, alignItems = alignItems, divider = divider,
@@ -122,7 +123,7 @@ fun RBuilder.mListItemWithAvatar(
     divider: Boolean = true,
     hRefOptions: HRefOptions? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListItemProps>? = null
 ) {
     mListItem(button = true, selected = selected, key = key, alignItems = alignItems, divider = divider,
@@ -154,7 +155,7 @@ fun RBuilder.mListItem(
     autoFocus: Boolean = false,
     hRefOptions: HRefOptions? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListItemProps>? = null
 ) {
     createStyled(listItemComponentType, className, handler) {

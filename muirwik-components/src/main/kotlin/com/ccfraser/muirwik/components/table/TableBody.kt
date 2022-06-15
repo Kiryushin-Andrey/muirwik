@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.table
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -19,7 +20,7 @@ external interface MTableBodyProps : StyledProps {
 
 fun RBuilder.mTableBody(
     component: String = "tbody",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTableBodyProps>? = null
 ) {
     createStyled(tableBodyComponentType, className, handler) {

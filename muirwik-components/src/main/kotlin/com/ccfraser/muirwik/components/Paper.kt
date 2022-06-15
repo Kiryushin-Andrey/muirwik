@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -28,7 +29,7 @@ fun RBuilder.mPaper(
     elevation: Int = 2,
     square: Boolean = false,
     variant: MPaperVariant = MPaperVariant.elevation,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MPaperProps>? = null
 ) {
     createStyled(paperComponentType, className, handler) {

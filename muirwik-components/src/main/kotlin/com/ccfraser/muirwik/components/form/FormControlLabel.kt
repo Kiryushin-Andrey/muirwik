@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.form
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -22,7 +23,7 @@ enum class MLabelPlacement {
 
 external interface MFormControlLabelProps : StyledPropsWithCommonAttributes {
     var checked: Boolean
-    var control: ReactElement
+    var control: ReactElement<*>
     var disabled: Boolean
     //    var inputRef	func		Use that property to pass a ref callback to the native input component.
     var label: String
@@ -34,14 +35,14 @@ var MFormControlLabelProps.labelPlacement by EnumPropToString(MLabelPlacement.va
 
 fun RBuilder.mFormControlLabel (
     label: String,
-    control: ReactElement,
+    control: ReactElement<*>,
     checked: Boolean? = null,
     disabled: Boolean = false,
     value: String? = null,
     name: String? = null,
     labelPlacement: MLabelPlacement = MLabelPlacement.end,
     onChange: ((Event, Boolean) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFormControlLabelProps>? = null
 ) {
     createStyled(formControlLabelComponentType, className, handler) {

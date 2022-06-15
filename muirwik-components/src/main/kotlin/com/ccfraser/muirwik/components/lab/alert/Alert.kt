@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.lab.alert
 import com.ccfraser.muirwik.components.EnumPropToStringNullable
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -26,8 +27,8 @@ enum class MAlertSeverity {
 }
 
 external interface MAlertProps : StyledPropsWithCommonAttributes {
-    var action: ReactElement
-    var icon: ReactElement
+    var action: ReactElement<*>
+    var icon: ReactElement<*>
     var onClose: (Event) -> Unit
     var closeText: String
 }
@@ -41,7 +42,7 @@ fun RBuilder.mAlert(
     severity: MAlertSeverity = MAlertSeverity.success,
     closeText: String = "Close",
     onClose: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MAlertProps>? = null
 ) {
     createStyled(alertComponentType, className, handler) {
@@ -60,7 +61,7 @@ fun RBuilder.mAlert(
     severity: MAlertSeverity = MAlertSeverity.success,
     closeText: String = "Close",
     onClose: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MAlertProps>? = null
 ){
     createStyled(alertComponentType, className, handler) {

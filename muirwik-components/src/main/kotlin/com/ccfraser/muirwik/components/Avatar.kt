@@ -1,8 +1,9 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import styled.StyledHandler
 
 @JsModule("@material-ui/core/Avatar")
@@ -34,7 +35,7 @@ fun RBuilder.mAvatar(
     component: String = "div",
     imgProps: Props? = null,
     sizes: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MAvatarProps>? = null
 ) {
     createStyled(avatarComponentType, className, handler) {

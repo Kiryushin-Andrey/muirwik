@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -37,7 +38,7 @@ fun RBuilder.mDivider(
     absolute: Boolean = false,
     orientation: MDividerOrientation = MDividerOrientation.horizontal,
     component: String = "hr",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MDividerProps>? = null
 ) = createStyled(dividerComponentType, className, handler) {
     attrs.absolute = absolute

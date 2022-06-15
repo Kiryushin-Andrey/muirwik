@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.card
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -21,7 +22,7 @@ external interface MCardMediaProps : StyledProps {
 fun RBuilder.mCardMedia(
     image: String,
     title: String = "",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MCardMediaProps>? = null
 ) {
     createStyled(cardMediaComponentType, className, handler) {

@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.menu
 
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.list.MListProps
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -25,10 +26,10 @@ external interface MMenuListProps : MListProps {
 fun RBuilder.mMenuList(
     dense: Boolean = false,
     disablePadding: Boolean = false,
-    subheader: ReactElement? = null,
+    subheader: ReactElement<*>? = null,
     component: String = "ul",
     disableListWrap: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MMenuListProps>? = null
 ) {
     createStyled(menuListType, className, handler) {

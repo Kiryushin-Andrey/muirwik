@@ -1,12 +1,13 @@
 package com.ccfraser.muirwik.components.lab
 
 import com.ccfraser.muirwik.components.*
-import kotlinext.js.Object
+import csstype.ClassName
+import kotlinx.js.Object
 import org.w3c.dom.Node
 import org.w3c.dom.events.Event
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import react.ReactElement
 import styled.StyledHandler
 
@@ -75,7 +76,7 @@ external interface MAutoCompleteBaseProps<T> : StyledPropsWithCommonAttributes {
     var forcePopupIcon: MAutoCompleteForcePopupIcon
     var freeSolo: Boolean
     var fullWidth: Boolean
-    var getLimitTagsText: (more: Int) -> ReactElement
+    var getLimitTagsText: (more: Int) -> ReactElement<*>
     var getOptionDisabled: (option: T) -> Boolean
     var getOptionLabel: (option: T?) -> String
     var getOptionSelected: (option: T?, value: T) -> Boolean
@@ -101,14 +102,14 @@ external interface MAutoCompleteBaseProps<T> : StyledPropsWithCommonAttributes {
     var openText: String
     var options: Array<T>
     @JsName("PaperComponent")
-    var paperComponent: ReactElement
+    var paperComponent: ReactElement<*>
     @JsName("PopperComponent")
-    var popperComponent: ReactElement
+    var popperComponent: ReactElement<*>
     var popupIcon: Node
-    var renderGroup: (option: T) -> ReactElement
-    var renderInput: (params: Props) -> ReactElement
-    var renderOption: (option: T, state: Object) -> ReactElement
-    var renderTags: (value: Array<T>, getTagProps: () -> Props) -> ReactElement
+    var renderGroup: (option: T) -> ReactElement<*>
+    var renderInput: (params: Props) -> ReactElement<*>
+    var renderOption: (option: T, state: Object) -> ReactElement<*>
+    var renderTags: (value: Array<T>, getTagProps: () -> Props) -> ReactElement<*>
     var selectOnFocus: Boolean
 }
 var <T> MAutoCompleteBaseProps<T>.size by EnumPropToString(MRatingSize.values())
@@ -139,9 +140,9 @@ external interface MAutoCompletePropsMultiValue<T> : MAutoCompleteBaseProps<T> {
  */
 fun <T> RBuilder.mAutoComplete(
     options: Array<T>,
-    renderInput: (params: Props) -> ReactElement,
+    renderInput: (params: Props) -> ReactElement<*>,
     value: T? = null,
-   className: String? = null,
+   className: ClassName? = null,
     handler: StyledHandler<MAutoCompleteProps<T>>? = null
 ) {
     val myComponent: ComponentType<MAutoCompleteProps<T>> = autoCompleteComponentType
@@ -159,9 +160,9 @@ fun <T> RBuilder.mAutoComplete(
  */
 fun <T> RBuilder.mAutoCompleteMultiValue(
     options: Array<T>,
-    renderInput: (params: Props) -> ReactElement,
+    renderInput: (params: Props) -> ReactElement<*>,
     value: Array<T>? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MAutoCompletePropsMultiValue<T>>? = null
 ) {
     val myComponent: ComponentType<MAutoCompletePropsMultiValue<T>> = autoCompleteComponentType

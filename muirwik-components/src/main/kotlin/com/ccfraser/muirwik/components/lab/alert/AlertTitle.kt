@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.lab.alert
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -14,7 +15,7 @@ private val alertTitleComponentType: ComponentType<StyledProps> = alertTitleModu
 
 fun RBuilder.mAlertTitle(
     title: String,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<StyledProps>? = null
 ) {
     createStyled(alertTitleComponentType, className, handler) {

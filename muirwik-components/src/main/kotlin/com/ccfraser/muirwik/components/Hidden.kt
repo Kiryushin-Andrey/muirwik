@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.styles.Breakpoint
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -46,7 +47,7 @@ fun RBuilder.mHidden(
     mdDown: Boolean = false,
     lgDown: Boolean = false,
     xlDown: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     implementation: MHiddenImplementation = MHiddenImplementation.js,
     initialWidth: Breakpoint? = null,
     handler: StyledHandler<MHiddenProps>

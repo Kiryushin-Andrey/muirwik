@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.gridlist
 
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -24,9 +25,9 @@ enum class MTitlePosition {
 }
 
 external interface MGridListTileBarProps: StyledProps {
-    var actionIcon: ReactElement
-    var subtitle: ReactElement
-    var title: ReactElement
+    var actionIcon: ReactElement<*>
+    var subtitle: ReactElement<*>
+    var title: ReactElement<*>
 }
 var MGridListTileBarProps.actionPosition by EnumPropToString(MActionPosition.values())
 var MGridListTileBarProps.titlePosition by EnumPropToString(MTitlePosition.values())
@@ -38,10 +39,10 @@ var MGridListTileBarProps.titlePosition by EnumPropToString(MTitlePosition.value
 fun RBuilder.mGridListTileBar(
     title: String,
     subtitle: String? = null,
-    actionIcon: ReactElement? = null,
+    actionIcon: ReactElement<*>? = null,
     titlePosition: MTitlePosition = MTitlePosition.bottom,
     actionPosition: MActionPosition = MActionPosition.right,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MGridListTileBarProps>? = null
 ) {
     createStyled(gridListTileBarComponentType, className, handler) {
@@ -59,12 +60,12 @@ fun RBuilder.mGridListTileBar(
 }
 
 fun RBuilder.mGridListTileBar(
-    title: ReactElement,
-    subtitle: ReactElement? = null,
-    actionIcon: ReactElement? = null,
+    title: ReactElement<*>,
+    subtitle: ReactElement<*>? = null,
+    actionIcon: ReactElement<*>? = null,
     titlePosition: MTitlePosition = MTitlePosition.bottom,
     actionPosition: MActionPosition = MActionPosition.right,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MGridListTileBarProps>? = null
 ) {
     createStyled(gridListTileBarComponentType, className, handler) {

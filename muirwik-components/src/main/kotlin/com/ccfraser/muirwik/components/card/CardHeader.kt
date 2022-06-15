@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.card
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.Node
 import react.ComponentType
 import react.Props
@@ -17,8 +18,8 @@ private external val cardHeaderModule: dynamic
 private val cardHeaderComponentType: ComponentType<MCardHeaderProps> = cardHeaderModule.default
 
 external interface MCardHeaderProps : StyledProps {
-    var action: ReactElement
-    var avatar: ReactElement
+    var action: ReactElement<*>
+    var avatar: ReactElement<*>
     var component: String
     var disableTypography: Boolean
     var subheader: Node
@@ -35,9 +36,9 @@ external interface MCardHeaderProps : StyledProps {
 fun RBuilder.mCardHeader(
     title: String,
     subHeader: String? = null,
-    avatar: ReactElement? = null,
-    action: ReactElement? = null,
-    className: String? = null,
+    avatar: ReactElement<*>? = null,
+    action: ReactElement<*>? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MCardHeaderProps>? = null
 ) {
     val titleNode: Node? = title.asDynamic()
@@ -51,9 +52,9 @@ fun RBuilder.mCardHeader(
 fun RBuilder.mCardHeader(
     title: Node? = null,
     subHeader: Node? = null,
-    avatar: ReactElement? = null,
-    action: ReactElement? = null,
-    className: String? = null,
+    avatar: ReactElement<*>? = null,
+    action: ReactElement<*>? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MCardHeaderProps>? = null
 ) {
     createStyled(cardHeaderComponentType, className, handler) {

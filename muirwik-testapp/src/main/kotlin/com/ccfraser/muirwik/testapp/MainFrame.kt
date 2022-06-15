@@ -9,7 +9,7 @@ import com.ccfraser.muirwik.components.styles.Breakpoint
 import com.ccfraser.muirwik.components.styles.down
 import com.ccfraser.muirwik.components.styles.up
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinx.js.jso
 import kotlinx.css.*
 import react.*
 import styled.StyleSheet
@@ -68,7 +68,7 @@ class MainFrame(props: MainFrameProps) : RComponent<MainFrameProps, MainFrameSta
                         }
                     }
 
-                    val p: MPaperProps = jsObject { }
+                    val p: MPaperProps = jso()
                     p.asDynamic().style = js { position = "relative"; width = drawerWidth.value; display = "block"; height = "100%"; minHeight = "100vh" }
                     mHidden(mdUp = true) {
                         mDrawer(state.responsiveDrawerOpen, MDrawerAnchor.left, MDrawerVariant.temporary, paperProps = p,

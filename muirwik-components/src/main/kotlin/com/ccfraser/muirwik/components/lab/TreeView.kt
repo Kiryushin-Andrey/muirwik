@@ -2,7 +2,8 @@ package com.ccfraser.muirwik.components.lab
 
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
-import kotlinext.js.Object
+import csstype.ClassName
+import kotlinx.js.Object
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -15,11 +16,11 @@ private external val treeViewModule: dynamic
 private val treeViewComponentType: ComponentType<MTreeViewProps> = treeViewModule.default
 
 external interface MTreeViewProps : StyledPropsWithCommonAttributes {
-  var defaultCollapseIcon: ReactElement
-  var defaultEndIcon: ReactElement
+  var defaultCollapseIcon: ReactElement<*>
+  var defaultEndIcon: ReactElement<*>
   var defaultExpanded: Array<String>
-  var defaultExpandIcon: ReactElement
-  var defaultParentIcon: ReactElement
+  var defaultExpandIcon: ReactElement<*>
+  var defaultParentIcon: ReactElement<*>
   var defaultSelected: Array<String>
   var disableSelection: Boolean
   var expanded: Array<String>
@@ -30,19 +31,19 @@ external interface MTreeViewProps : StyledPropsWithCommonAttributes {
 }
 
 fun RBuilder.mTreeView(
-    defaultCollapseIcon: ReactElement? = null,
-    defaultEndIcon: ReactElement? = null,
+    defaultCollapseIcon: ReactElement<*>? = null,
+    defaultEndIcon: ReactElement<*>? = null,
     defaultExpanded: Array<String> = emptyArray(),
-    defaultExpandIcon: ReactElement? = null,
-    defaultParentIcon: ReactElement? = null,
+    defaultExpandIcon: ReactElement<*>? = null,
+    defaultParentIcon: ReactElement<*>? = null,
     defaultSelected: Array<String> = emptyArray(),
     disableSelection: Boolean = false,
     expanded: Array<String>? = null,
     multiSelect: Boolean = false,
     onNodeSelect: ((event: Object, value: dynamic/*Array<String> | String*/) -> Unit)? = null,
     onNodeToggle: ((event: Object, nodeIds: Array<String>) -> Unit)? = null,
-    selected: Any? /*Array<String> | String*/ = null                                            ,
-    className: String? = null,
+    selected: Any? /*Array<String> | String*/ = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTreeViewProps>? = null
 ) {
   createStyled(treeViewComponentType, className, handler) {

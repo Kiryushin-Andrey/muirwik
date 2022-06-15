@@ -3,11 +3,9 @@ package com.ccfraser.muirwik.components.lab
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
-import kotlinext.js.Object
-import react.ComponentType
-import react.FunctionComponent
-import react.RBuilder
-import react.ReactElement
+import csstype.ClassName
+import kotlinx.js.Object
+import react.*
 import styled.StyledHandler
 
 @JsModule("@material-ui/lab/Rating")
@@ -24,12 +22,12 @@ enum class MRatingSize {
 external interface MRatingProps : StyledPropsWithCommonAttributes {
     var defaultValue: Number
     var disabled: Boolean
-    var emptyIcon: ReactElement
+    var emptyIcon: ReactElement<*>
     var emptyLabelText: String
     var getLabelText: (value: Number) -> String
-    var icon: ReactElement
+    var icon: ReactElement<*>
     @JsName("IconContainerComponent")
-    var iconContainerComponent: FunctionComponent<MIconContainerProps>
+    var iconContainerComponent: FC<MIconContainerProps>
     var max: Number
     var name: String
     var onChange: (event: Object, newValue: Number) -> Unit
@@ -53,11 +51,11 @@ fun RBuilder.mRating(
     defaultValue: Number? = null,
     readOnly: Boolean = false,
     disabled: Boolean = false,
-    icon: ReactElement? = null,
-    emptyIcon: ReactElement? = null,
+    icon: ReactElement<*>? = null,
+    emptyIcon: ReactElement<*>? = null,
     emptyLabelText: String = "Empty",
     size: MRatingSize = MRatingSize.medium,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MRatingProps>? = null
 ) {
     createStyled(ratingComponentType, className, handler) {

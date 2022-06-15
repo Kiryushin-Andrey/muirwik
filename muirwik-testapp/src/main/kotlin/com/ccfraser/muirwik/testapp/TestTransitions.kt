@@ -7,7 +7,7 @@ import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
 import com.ccfraser.muirwik.components.transitions.*
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinx.js.jso
 import kotlinx.css.*
 import react.*
 import react.dom.div
@@ -24,7 +24,7 @@ import styled.styledDiv
 //    val strokeWidth: Int
 //): Props
 
-external interface ShapeProps : Props {
+external interface ShapeProps : PropsWithClassName {
     var points: String
     var stroke: String
     var fill: String
@@ -33,7 +33,7 @@ external interface ShapeProps : Props {
 
 
 private fun RBuilder.upsideDownV(w: Int, h: Int) {
-    val shapeProps = jsObject<ShapeProps> {
+    val shapeProps = jso<ShapeProps> {
         points = "0,$h ${w/2},0 $w,$h"
         stroke = "silver"
         fill = "white"
@@ -47,7 +47,7 @@ private fun RBuilder.upsideDownV(w: Int, h: Int) {
 
 //        Works in Legacy, but not IR... need to use the longer method of creating a jsObject as above
 //        child(createElement("polygon", ShapeProps("0,$h ${w/2},0 $w,$h", "silver", "white", 1)))
-        child(createElement("polygon", shapeProps))
+        child(createElement(IntrinsicType("polygon"), shapeProps))
     }
 }
 

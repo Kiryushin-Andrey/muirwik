@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.gridlist
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -35,7 +36,7 @@ fun RBuilder.mGridList(
     cellHeight: Int = 180,
     component: String = "ul",
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MGridListProps>? = null
 ) {
     createStyled(gridListComponentType, className, handler) {

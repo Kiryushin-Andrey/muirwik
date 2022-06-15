@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.dialog
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactNode
@@ -21,7 +22,7 @@ external interface MDialogTitleProps : StyledProps {
 fun RBuilder.mDialogTitle(
     text: String,
     disableTypography: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MDialogTitleProps>? = null
 ) {
     createStyled(dialogTitleComponentType, className, handler) {

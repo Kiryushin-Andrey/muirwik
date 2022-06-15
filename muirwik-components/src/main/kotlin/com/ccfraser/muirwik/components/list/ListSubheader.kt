@@ -4,6 +4,7 @@ import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.spacingUnits
+import csstype.ClassName
 import kotlinx.css.lineHeight
 import kotlinx.css.padding
 import kotlinx.css.properties.LineHeight
@@ -43,7 +44,7 @@ fun RBuilder.mListSubheader(
     disableSticky: Boolean = false,
     inset: Boolean = false,
     compact: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListSubheaderProps>? = null
 ) {
     createStyled(listSubheaderComponentType, className, handler) {
@@ -73,7 +74,7 @@ fun RBuilder.mListSubheader(
     disableGutters: Boolean = false,
     disableSticky: Boolean = false,
     inset: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListSubheaderProps>? = null
 ){
     createStyled(listSubheaderComponentType, className, handler) {

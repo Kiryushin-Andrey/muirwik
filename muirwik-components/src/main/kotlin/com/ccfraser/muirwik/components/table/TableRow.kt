@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.table
 
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -26,7 +27,7 @@ fun RBuilder.mTableRow(
     hover: Boolean = false,
     onClick: ((Event) -> Unit)? = null,
     component: String = "tr",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTableRowProps>? = null
 ) {
     createStyled(tableRowComponentType, className, handler) {

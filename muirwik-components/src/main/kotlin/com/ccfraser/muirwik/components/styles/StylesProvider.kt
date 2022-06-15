@@ -1,9 +1,12 @@
 package com.ccfraser.muirwik.components.styles
 
-import kotlinext.js.Object
-import kotlinext.js.jsObject
+import kotlinx.js.Object
+import kotlinx.js.jso
 import org.w3c.dom.Element
-import react.*
+import react.ComponentType
+import react.Props
+import react.RBuilder
+import react.RHandler
 
 @JsModule("@material-ui/styles/StylesProvider")
 private external val stylesProviderModule: dynamic
@@ -61,7 +64,7 @@ fun RBuilder.mStylesProvider(
     jss: Object? = null,
     handler: RHandler<MStylesProviderProps>? = null
 ) {
-    child(stylesProviderComponentType, jsObject()) {
+    child(stylesProviderComponentType, jso()) {
         attrs.injectFirst = injectFirst
         attrs.disableGeneration = disableGeneration
         generateClassName?.let { attrs.generateClassName = it }

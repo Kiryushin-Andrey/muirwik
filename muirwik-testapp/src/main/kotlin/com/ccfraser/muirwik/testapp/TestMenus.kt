@@ -12,7 +12,7 @@ import com.ccfraser.muirwik.components.transitions.MTransitionProps
 import com.ccfraser.muirwik.components.transitions.SimpleTransitionDuration
 import com.ccfraser.muirwik.components.transitions.mFade
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinx.js.jso
 import kotlinx.css.*
 import kotlinx.html.BUTTON
 import org.w3c.dom.Node
@@ -91,7 +91,7 @@ class TestMenus : RComponent<Props, State>() {
                 styledDiv {
                     css { flexGrow = 1.0; padding(2.spacingUnits) }
 
-                    val menuListProps: MMenuListProps = jsObject { }
+                    val menuListProps: MMenuListProps = jso()
                     menuListProps.asDynamic().style = js {
                         maxHeight = 216
                     }
@@ -120,7 +120,12 @@ class TestMenus : RComponent<Props, State>() {
                 // For some reason this is a bit different to providing the snackbar a transition... this works for menu, not for snackbar
                 class FadeTransition(props: MTransitionProps) : RComponent<MTransitionProps, State>(props) {
                     override fun RBuilder.render() {
-                        childList.add(cloneElement(buildElement { mFade() }, props))
+                        childList.add(
+                            cloneElement(
+                                buildElements(RBuilder()) { mFade() }.unsafeCast<ReactElement<MTransitionProps>>(),
+                                props
+                            )
+                        )
                     }
                 }
 

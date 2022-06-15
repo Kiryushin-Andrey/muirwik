@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components
 import com.ccfraser.muirwik.components.transitions.MFadeProps
 import com.ccfraser.muirwik.components.transitions.TransitionDuration
 import com.ccfraser.muirwik.components.transitions.TransitionDurationDelegate
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -26,7 +27,7 @@ fun RBuilder.mBackdrop(
     invisible: Boolean = false,
     transitionDuration: TransitionDuration? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MBackdropProps>? = null
 ) {
     createStyled(backdropComponentType, className, handler) {

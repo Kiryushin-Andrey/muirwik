@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.button
 
 import com.ccfraser.muirwik.components.*
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -19,10 +20,10 @@ private val buttonComponentType: ComponentType<MButtonProps> = buttonModule.defa
 external interface MButtonProps : MButtonBaseProps {
     var disableFocusRipple: Boolean
     var disableElevation: Boolean
-    var endIcon: ReactElement
+    var endIcon: ReactElement<*>
     var fullWidth: Boolean
     var href: String
-    var startIcon: ReactElement
+    var startIcon: ReactElement<*>
 }
 //var MButtonProps.color by EnumPropToStringNullable(MColor.values())
 var MButtonProps.color by EnumPropToString(MColor.values())
@@ -41,7 +42,7 @@ fun RBuilder.mButton(
     onClick: ((Event) -> Unit)? = null,
     size: MButtonSize = MButtonSize.medium,
     hRefOptions: HRefOptions? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MButtonProps>? = null
 ) {
     createStyled(buttonComponentType, className, handler) {

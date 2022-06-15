@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.lab.pagination
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -83,7 +84,7 @@ fun RBuilder.mPagination(
     size: MPaginationSize = MPaginationSize.medium,
     variant: MPaginationVariant = MPaginationVariant.text,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MPaginationProps>? = null
 ) {
   createStyled(paginationComponentType, className, handler) {

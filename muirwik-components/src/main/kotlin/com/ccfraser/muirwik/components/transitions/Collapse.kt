@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.transitions
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import kotlinx.css.LinearDimension
 import kotlinx.css.px
 import react.ComponentType
@@ -21,12 +22,12 @@ external interface MCollapseProps : MTransitionProps {
 var MCollapseProps.timeout by TransitionDurationWithAutoDelegate()
 
 fun RBuilder.mCollapse(
-        show: Boolean = false,
-        collapsedHeight: LinearDimension = 0.px,
-        component: String = "div",
-        timeout: TransitionDurationWithAuto? = null,
-        className: String? = null,
-        handler: StyledHandler<MCollapseProps>? = null
+    show: Boolean = false,
+    collapsedHeight: LinearDimension = 0.px,
+    component: String = "div",
+    timeout: TransitionDurationWithAuto? = null,
+    className: ClassName? = null,
+    handler: StyledHandler<MCollapseProps>? = null
 ) {
     createStyled(collapseComponentType, className, handler) {
         attrs.collapsedHeight = collapsedHeight.toString()

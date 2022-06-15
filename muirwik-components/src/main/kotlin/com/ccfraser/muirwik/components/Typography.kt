@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactNode
@@ -39,16 +40,16 @@ var MTypographyProps.variant by EnumPropToString(MTypographyVariant.values())
 
 
 fun RBuilder.mTypography(
-        text: String? = null,
-        variant: MTypographyVariant = MTypographyVariant.body1,
-        color: MTypographyColor = MTypographyColor.initial,
-        align: MTypographyAlign = MTypographyAlign.left,
-        gutterBottom: Boolean = false,
-        noWrap: Boolean = false,
-        paragraph: Boolean = false,
-        component: ElementType? = null,
-        className: String? = null,
-        handler: StyledHandler<MTypographyProps>? = null
+    text: String? = null,
+    variant: MTypographyVariant = MTypographyVariant.body1,
+    color: MTypographyColor = MTypographyColor.initial,
+    align: MTypographyAlign = MTypographyAlign.left,
+    gutterBottom: Boolean = false,
+    noWrap: Boolean = false,
+    paragraph: Boolean = false,
+    component: ElementType? = null,
+    className: ClassName? = null,
+    handler: StyledHandler<MTypographyProps>? = null
 ) {
     createStyled(typographyComponentType, className, handler) {
         attrs.align = align

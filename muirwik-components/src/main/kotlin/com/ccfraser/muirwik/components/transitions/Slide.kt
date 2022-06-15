@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.transitions
 
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -26,7 +27,7 @@ fun RBuilder.mSlide(
     show: Boolean = false,
     direction: SlideTransitionDirection = SlideTransitionDirection.down,
     timeout: TransitionDuration? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSlideProps>? = null
 ) {
     createStyled(slideComponentType, className, handler) {

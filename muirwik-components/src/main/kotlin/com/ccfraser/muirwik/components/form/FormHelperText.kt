@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.form
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.EnumPropToStringNullable
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactNode
@@ -37,7 +38,7 @@ fun RBuilder.mFormHelperText (
     variant: MFormControlVariant = MFormControlVariant.standard,
     margin: MLabelMargin? = null,
     component: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFormHelperTextProps>? = null
 ) {
     createStyled(formHelperTextComponentType, className, handler) {

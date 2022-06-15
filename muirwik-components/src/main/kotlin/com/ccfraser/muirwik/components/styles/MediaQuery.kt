@@ -1,6 +1,6 @@
 package com.ccfraser.muirwik.components.styles
 
-import kotlinext.js.jsObject
+import kotlinx.js.jso
 import org.w3c.dom.MediaQueryList
 
 @JsModule("@material-ui/core/useMediaQuery")
@@ -36,7 +36,7 @@ private fun convertOptions(
     matchMedia: MatchMedia?,
     noSsr: Boolean?,
     ssrMatchMedia: MatchMedia?
-): dynamic = jsObject {
+): dynamic = jso {
     defaultMatches?.let {
         this.defaultMatches = defaultMatches
     }

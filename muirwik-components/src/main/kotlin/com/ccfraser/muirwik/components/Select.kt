@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.form.MFormControlVariant
 import com.ccfraser.muirwik.components.input.MInputBaseNoOnChangeProps
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.*
 import styled.StyledHandler
@@ -26,7 +27,7 @@ external interface MSelectProps : MInputBaseNoOnChangeProps {
     @JsName("IconComponent")
     var iconComponent: RComponent<MIconProps, State>?
 
-    var input: ReactElement?
+    var input: ReactElement<*>?
     var margin: String
 
     @JsName("MenuProps")
@@ -35,11 +36,11 @@ external interface MSelectProps : MInputBaseNoOnChangeProps {
     var multiple: Boolean
     var native: Boolean
 
-    var onChange: ((event: Event, child: ReactElement?) -> Unit)?
+    var onChange: ((event: Event, child: ReactElement<*>?) -> Unit)?
     var onClose: SimpleEvent?
     var onOpen: SimpleEvent?
     var open: Boolean
-    var renderValue: ((value: Any) -> ReactElement)?
+    var renderValue: ((value: Any) -> ReactElement<*>)?
 
     @JsName("SelectDisplayProps")
     var selectDisplayProps: Props?
@@ -60,10 +61,10 @@ fun RBuilder.mSelect(
     autoFocus: Boolean? = null,
     id: String? = null,
     name: String? = null,
-    input: ReactElement? = null,
+    input: ReactElement<*>? = null,
     native: Boolean = false,
-    onChange: ((event: Event, child: ReactElement?) -> Unit)? = null,
-    className: String? = null,
+    onChange: ((event: Event, child: ReactElement<*>?) -> Unit)? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSelectProps>? = null
 ) {
     createStyled(selectComponentType, className, handler) {

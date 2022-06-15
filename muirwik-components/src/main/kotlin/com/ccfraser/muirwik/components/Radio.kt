@@ -5,6 +5,7 @@ import com.ccfraser.muirwik.components.form.MFormControlLabelProps
 import com.ccfraser.muirwik.components.form.MFormGroupProps
 import com.ccfraser.muirwik.components.form.MLabelPlacement
 import com.ccfraser.muirwik.components.form.mFormControlLabel
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.*
 import styled.StyledHandler
@@ -19,10 +20,10 @@ private val radioComponentType: ComponentType<MRadioProps> = radioModule.default
 
 external interface MRadioProps : StyledPropsWithCommonAttributes {
     var checked: Boolean
-    var checkedIcon: ReactElement?
+    var checkedIcon: ReactElement<*>?
     var disabled: Boolean
     var disableRipple: Boolean
-    var icon: ReactElement?
+    var icon: ReactElement<*>?
     var inputProps: Props?
     var onChange: ((Event, Boolean) -> Unit)?
     var required: Boolean
@@ -42,7 +43,7 @@ fun RBuilder.mRadio(
     id: String? = null,
     inputProps: Props? = null,
     value: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MRadioProps>? = null
 ) {
     createStyled(radioComponentType, className, handler) {
@@ -74,7 +75,7 @@ fun RBuilder.mRadioWithLabel(
     id: String? = null,
     inputProps: Props? = null,
     value: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFormControlLabelProps>? = null
 ) {
     val radio = buildElement { mRadio(checked, color, disabled, required, size, onChange, id, inputProps, value) }
@@ -100,7 +101,7 @@ fun RBuilder.mRadioGroup(
     onChange: ((event: Event, value: String) -> Unit)? = null,
     name: String? = null,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MRadioGroupProps>? = null
 ) {
     createStyled(radioGroupComponentType, className, handler) {

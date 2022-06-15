@@ -10,7 +10,7 @@ import com.ccfraser.muirwik.components.styles.up
 import com.ccfraser.muirwik.components.transitions.SimpleTransitionDuration
 import com.ccfraser.muirwik.testapp.TestDrawers.ComponentStyles.drawer
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinx.js.jso
 import kotlinx.css.*
 import kotlinx.css.properties.Timing
 import kotlinx.css.properties.Transition
@@ -121,7 +121,7 @@ class TestDrawers : RComponent<Props, State>() {
                     }
 
                     //TODO: Not sure about this style... seems to work though...
-                    val pp: MPaperProps = jsObject { }
+                    val pp: MPaperProps = jso()
                     pp.asDynamic().style = js { position = "relative" }
                     mDrawer(true, MDrawerAnchor.left, MDrawerVariant.permanent, paperProps = pp) {
                         spacer()
@@ -150,7 +150,7 @@ class TestDrawers : RComponent<Props, State>() {
                         }
                     }
 
-                    val pp: MPaperProps = jsObject { }
+                    val pp: MPaperProps = jso()
                     pp.asDynamic().style = js { position = "relative" }
                     mDrawer(true, MDrawerAnchor.left, MDrawerVariant.permanent, paperProps = pp) {
                         spacer()
@@ -187,7 +187,7 @@ class TestDrawers : RComponent<Props, State>() {
                         }
                     }
 
-                    val pp: MPaperProps = jsObject { }
+                    val pp: MPaperProps = jso()
                     pp.asDynamic().style = js { position = "relative" }
                     mDrawer(slideOutDrawerOpen, MDrawerAnchor.left, MDrawerVariant.persistent, paperProps = pp) {
                         css {
@@ -232,7 +232,7 @@ class TestDrawers : RComponent<Props, State>() {
                         }
                     }
 
-                    val pp: MPaperProps = jsObject { }
+                    val pp: MPaperProps = jso()
                     pp.asDynamic().style = js {
                         position = "relative"
                         transition = "width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"
@@ -292,7 +292,7 @@ class TestDrawers : RComponent<Props, State>() {
                         }
                     }
 
-                    val pp: MPaperProps = jsObject { }
+                    val pp: MPaperProps = jso()
                     pp.asDynamic().style = js {
                         width = drawerWidth + 1
                         position = "relative"

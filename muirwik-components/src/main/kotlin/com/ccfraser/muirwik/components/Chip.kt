@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import org.w3c.dom.Node
 import org.w3c.dom.events.Event
 import react.ComponentType
@@ -29,11 +30,11 @@ enum class MChipSize {
 }
 
 external interface MChipProps : StyledPropsWithCommonAttributes {
-    var avatar: ReactElement
+    var avatar: ReactElement<*>
     var clickable: Boolean
     var component: String
-    var deleteIcon: ReactElement
-    var icon: ReactElement
+    var deleteIcon: ReactElement<*>
+    var icon: ReactElement<*>
     var label: Node
     var key: Any
     var onDelete: (Event) -> Unit
@@ -47,14 +48,14 @@ var MChipProps.variant by EnumPropToString(MChipVariant.values())
  */
 fun RBuilder.mChip(
     label: String,
-    avatar: ReactElement? = null,
+    avatar: ReactElement<*>? = null,
     onClick: ((Event) -> Unit)? = null,
     onDelete: ((Event) -> Unit)? = null,
     key: Any? = null,
     color: MChipColor = MChipColor.default,
     size: MChipSize = MChipSize.medium,
     variant: MChipVariant = MChipVariant.default,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MChipProps>? = null
 ) {
     createStyled(chipComponentType, className, handler) {

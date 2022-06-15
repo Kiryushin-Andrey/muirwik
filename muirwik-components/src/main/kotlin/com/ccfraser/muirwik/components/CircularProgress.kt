@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import kotlinx.css.LinearDimension
 import kotlinx.css.px
 import react.ComponentType
@@ -44,7 +45,7 @@ fun RBuilder.mCircularProgress(
     color: MCircularProgressColor = MCircularProgressColor.primary,
     thickness: Double = 3.6,
     disableShrink: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MCircularProgressProps>? = null
 ) {
     createStyled(circularProgressComponentType, className, handler) {

@@ -1,10 +1,11 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import react.ReactElement
 import styled.StyledHandler
 import styled.StyledProps
@@ -47,7 +48,7 @@ external interface MTabsProps: StyledProps {
     var onChange: (event: Event, indexValue: Any) -> Unit
 
     @JsName("ScrollButtonComponent")
-    var scrollButtonComponent: ReactElement
+    var scrollButtonComponent: ReactElement<*>
 
     var selectionFollowsFocus: Boolean
 
@@ -72,10 +73,10 @@ fun RBuilder.mTabs(
     textColor: MTabTextColor = MTabTextColor.inherit,
     tabIndicatorProps: Props? = null,
     scrollButtons: MTabScrollButtons = MTabScrollButtons.auto,
-    scrollButtonComponent: ReactElement? = null,
+    scrollButtonComponent: ReactElement<*>? = null,
     onChange: ((event: Event, indexValue: Any) -> Unit)? = null,
     action: ((actions: Any) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTabsProps>? = null
 ) {
     createStyled(tabsComponentType, className, handler) {
@@ -102,22 +103,22 @@ private val tabComponentType: ComponentType<MTabProps> = tabModule.default
 
 external interface MTabProps: MButtonBaseProps {
     var disableFocusRipple: Boolean
-    var icon: ReactElement
-    var label: ReactElement
+    var icon: ReactElement<*>
+    var label: ReactElement<*>
     var value: Any
     var wrapped: Boolean
 }
 
 fun RBuilder.mTab(
-    label: ReactElement? = null,
+    label: ReactElement<*>? = null,
     value: Any? = null,
-    icon: ReactElement? = null,
+    icon: ReactElement<*>? = null,
     disabled: Boolean = false,
     disableRipple: Boolean? = null,
     disableFocusRipple: Boolean? = null,
     wrapped: Boolean = false,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTabProps>? = null
 ) {
     createStyled(tabComponentType, className, handler) {
@@ -135,9 +136,9 @@ fun RBuilder.mTab(
 fun RBuilder.mTab(
     label: String,
     value: Any = label,
-    icon: ReactElement? = null,
+    icon: ReactElement<*>? = null,
     disabled: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTabProps>? = null
 ) {
     createStyled(tabComponentType, className, handler) {

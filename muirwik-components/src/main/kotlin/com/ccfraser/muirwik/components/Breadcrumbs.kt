@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -17,7 +18,7 @@ external interface MBreadcrumbsProps: StyledPropsWithCommonAttributes {
     var itemsAfterCollapse: Int
     var itemsBeforeCollapse: Int
     var maxItems: Int
-    var separator: ReactElement
+    var separator: ReactElement<*>
 }
 
 @Suppress("UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
@@ -27,20 +28,20 @@ fun RBuilder.mBreadcrumbs(
     itemsBeforeCollapse: Int = 1,
     itemsAfterCollapse: Int = 1,
     component: String = "nav",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MBreadcrumbsProps>? = null
 ) {
-    mBreadcrumbs(separator.asDynamic() as ReactElement, maxItems, itemsBeforeCollapse, itemsAfterCollapse, component, className, handler)
+    mBreadcrumbs(separator.asDynamic() as ReactElement<*>, maxItems, itemsBeforeCollapse, itemsAfterCollapse, component, className, handler)
 }
 
 
 fun RBuilder.mBreadcrumbs(
-    separator: ReactElement,
+    separator: ReactElement<*>,
     maxItems: Int = 8,
     itemsBeforeCollapse: Int = 1,
     itemsAfterCollapse: Int = 1,
     component: String = "nav",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MBreadcrumbsProps>? = null
 ) {
     createStyled(breadcrumbsComponentType, className, handler) {

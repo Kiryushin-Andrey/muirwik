@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.form.MFormControlVariant
 import com.ccfraser.muirwik.components.input.MInputMargin
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.*
 import styled.StyledHandler
@@ -22,11 +23,11 @@ external interface MNativeSelectProps : StyledPropsWithCommonAttributes {
     @JsName("IconComponent")
     var iconComponent: RComponent<MIconProps, State>?
 
-    var input: ReactElement?
+    var input: ReactElement<*>?
     var inputProps: Props
     var multiple: Boolean
     var name: String
-    var onChange: ((event: Event, child: ReactElement?) -> Unit)?
+    var onChange: ((event: Event, child: ReactElement<*>?) -> Unit)?
     var value: Any
 }
 var MNativeSelectProps.margin by EnumPropToStringNullable(MInputMargin.values())
@@ -47,8 +48,8 @@ fun RBuilder.mNativeSelect(
     id: String? = null,
     name: String? = null,
     variant: MFormControlVariant = MFormControlVariant.standard,
-    onChange: ((event: Event, child: ReactElement?) -> Unit)? = null,
-    className: String? = null,
+    onChange: ((event: Event, child: ReactElement<*>?) -> Unit)? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MNativeSelectProps>? = null
 ) {
     createStyled(nativeSelectComponentType, className, handler) {

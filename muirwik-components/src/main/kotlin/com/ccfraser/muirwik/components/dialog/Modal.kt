@@ -22,13 +22,13 @@ enum class ModalOnCloseReason {
 
 external interface MModalProps : StyledPropsWithCommonAttributes {
     @JsName("BackdropComponent")
-    var backdropComponent: ReactElement
+    var backdropComponent: ReactElement<*>
 
     @Suppress("BackdropProps")
     var backdropProps: Props
 
     var closeAfterTransition: Boolean
-    var container: ReactElement
+    var container: ReactElement<*>
     var disableAutoFocus: Boolean
     var disableBackdropClick: Boolean
     var disableEnforceFocus: Boolean

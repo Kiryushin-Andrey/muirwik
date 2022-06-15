@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.table
 
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -20,7 +21,7 @@ external interface MTableContainerProps : StyledPropsWithCommonAttributes {
 fun RBuilder.mTableContainer(
     component: String? = "div",
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTableContainerProps>? = null
 ) {
     createStyled(tableContainerComponentType, className, handler) {

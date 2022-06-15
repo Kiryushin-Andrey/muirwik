@@ -1,9 +1,9 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import kotlinx.css.flexGrow
 import react.ComponentType
 import react.RBuilder
-import react.ReactElement
 import styled.StyledHandler
 import styled.StyledProps
 import styled.css
@@ -29,7 +29,7 @@ fun RBuilder.mToolbar(
     disableGutters: Boolean = false,
     variant: ToolbarVariant = ToolbarVariant.regular,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MToolbarProps>? = null
 ) {
     createStyled(toolbarComponentType, className, handler) {

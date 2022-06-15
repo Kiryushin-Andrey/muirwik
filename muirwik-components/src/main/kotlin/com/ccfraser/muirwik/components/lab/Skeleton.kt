@@ -6,6 +6,7 @@ import com.ccfraser.muirwik.components.ElementType
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import kotlinx.css.LinearDimension
 import react.ComponentType
 import react.PropsWithChildren
@@ -54,7 +55,7 @@ fun RBuilder.mSkeleton(
     variant: MSkeletonVariant = MSkeletonVariant.text,
     animation: MSkeletonAnimation = MSkeletonAnimation.pulse,
     component: ElementType? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSkeletonProps>? = null,
 ) {
   createStyled(skeletonComponentType, className = className, handler) {

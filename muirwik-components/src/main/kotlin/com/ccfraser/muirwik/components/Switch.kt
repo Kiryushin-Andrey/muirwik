@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components
 import com.ccfraser.muirwik.components.button.MIconButtonSize
 import com.ccfraser.muirwik.components.form.MFormControlLabelProps
 import com.ccfraser.muirwik.components.form.mFormControlLabel
+import csstype.ClassName
 import kotlinx.html.InputType
 import org.w3c.dom.events.Event
 import react.*
@@ -22,10 +23,10 @@ enum class MSwitchEdge {
 
 external interface MSwitchProps : StyledPropsWithCommonAttributes {
     var checked: Boolean
-    var checkedIcon: ReactElement
+    var checkedIcon: ReactElement<*>
     var disabled: Boolean
     var disableRipple: Boolean
-    var icon: ReactElement
+    var icon: ReactElement<*>
     var inputProps: Props
     var onChange: (Event, Boolean) -> Unit
     var required: Boolean
@@ -47,7 +48,7 @@ fun RBuilder.mSwitch(
     inputProps: Props? = null,
     value: String? = null,
     edge: MSwitchEdge? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSwitchProps>? = null
 ) {
     createStyled(switchComponentType, className, handler) {
@@ -82,9 +83,9 @@ fun RBuilder.mSwitchWithLabel(
     inputProps: Props? = null,
     value: String? = null,
     edge: MSwitchEdge? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFormControlLabelProps>? = null
 ) {
-    val switch = createElement { mSwitch(checked, color, disabled, required, size, onChange, id, inputProps, value, edge) }
+    val switch = createElement<MSwitchProps> { mSwitch(checked, color, disabled, required, size, onChange, id, inputProps, value, edge) }
     mFormControlLabel(label, switch!!, checked, disabled, value = value, className = className, handler = handler)
 }

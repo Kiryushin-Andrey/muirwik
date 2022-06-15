@@ -5,6 +5,7 @@ import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
 import com.ccfraser.muirwik.testapp.TestStyles.ComponentStyles.aStyle
 import com.ccfraser.muirwik.testapp.TestStyles.ComponentStyles.divPadding
+import csstype.ClassName
 import kotlinext.js.js
 import kotlinx.css.*
 import kotlinx.css.properties.BoxShadow
@@ -108,7 +109,7 @@ class TestStyles : RComponent<Props, State>() {
 
             // Sometimes you need the class name of the CSS Builder...
             mButton("Sometimes you need to use class name") {
-                attrs.className = "${ComponentStyles.name}-${::aStyle.name}"
+                attrs.className = ClassName("${ComponentStyles.name}-${::aStyle.name}")
             }
         }
     }

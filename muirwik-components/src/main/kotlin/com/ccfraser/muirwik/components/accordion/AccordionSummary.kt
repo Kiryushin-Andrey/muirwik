@@ -2,9 +2,10 @@ package com.ccfraser.muirwik.components.accordion
 
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import react.ReactElement
 import styled.StyledHandler
 
@@ -15,14 +16,14 @@ private external val accordionSummaryModule: dynamic
 private val accordionSummaryComponentType: ComponentType<MAccordionSummaryProps> = accordionSummaryModule.default
 
 external interface MAccordionSummaryProps : StyledPropsWithCommonAttributes {
-	var expandIcon: ReactElement
+	var expandIcon: ReactElement<*>
 	var iconButtonProps: Props
 }
 
 fun RBuilder.mAccordionSummary(
-	expandIcon: ReactElement? = null,
+	expandIcon: ReactElement<*>? = null,
 	iconButtonProps: Props? = null,
-	className: String? = null,
+	className: ClassName? = null,
 	handler: StyledHandler<MAccordionSummaryProps>? = null
 ) {
 	createStyled(accordionSummaryComponentType, className, handler) {

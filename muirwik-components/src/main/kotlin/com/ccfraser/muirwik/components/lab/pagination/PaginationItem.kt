@@ -4,6 +4,7 @@ import com.ccfraser.muirwik.components.ElementType
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -83,7 +84,7 @@ fun RBuilder.mPaginationItem(
     size: MPaginationItemSize = MPaginationItemSize.medium,
     type: MPaginationItemType = MPaginationItemType.page,
     variant: MPaginationItemVariant = MPaginationItemVariant.text,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MPaginationItemProps>? = null
 ) {
   createStyled(paginationComponentType, className, handler) {

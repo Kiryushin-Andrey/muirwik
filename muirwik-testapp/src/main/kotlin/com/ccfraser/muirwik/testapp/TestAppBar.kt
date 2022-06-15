@@ -8,6 +8,7 @@ import com.ccfraser.muirwik.components.styles.Breakpoint
 import com.ccfraser.muirwik.components.styles.Theme
 import com.ccfraser.muirwik.components.styles.fade
 import com.ccfraser.muirwik.components.styles.up
+import csstype.ClassName
 import kotlinx.css.*
 import kotlinx.css.properties.Timing
 import kotlinx.css.properties.Transition
@@ -185,7 +186,7 @@ class TestAppBar : RComponent<Props, State>() {
                 styledDiv {
                     css { flexGrow = 1.0; padding(2.spacingUnits) }
 
-                    mAppBar(position = MAppBarPosition.static, className = "hello") {
+                    mAppBar(position = MAppBarPosition.static, className = ClassName("hello")) {
                         attrs.elevation = 0
                         mToolbar {
                             mIconButton("menu", color = MColor.inherit) { css { marginLeft = -12.px; marginRight = 20.px }}

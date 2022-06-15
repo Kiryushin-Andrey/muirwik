@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.list
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.mDivider
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -19,15 +20,15 @@ private val listComponentType: ComponentType<MListProps> = listModule.default
 external interface MListProps : MButtonBaseProps {
     var dense: Boolean
     var disablePadding: Boolean
-    var subheader: ReactElement
+    var subheader: ReactElement<*>
 }
 
 fun RBuilder.mList(
     dense: Boolean = false,
     disablePadding: Boolean = false,
-    subheader: ReactElement? = null,
+    subheader: ReactElement<*>? = null,
     component: String = "ul",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListProps>? = null
 ) {
     createStyled(listComponentType, className, handler) {
@@ -44,7 +45,7 @@ fun RBuilder.mList(
     dense: Boolean = false,
     disablePadding: Boolean = false,
     component: String = "ul",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListProps>? = null
 ) {
     createStyled(listComponentType, className, handler) {

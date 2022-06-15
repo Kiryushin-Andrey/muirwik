@@ -6,7 +6,7 @@ import com.ccfraser.muirwik.components.form.MFormControlVariant
 import com.ccfraser.muirwik.components.input.mInputAdornment
 import com.ccfraser.muirwik.components.menu.mMenuItem
 import com.ccfraser.muirwik.testapp.TestTextFields.ComponentStyles.textField
-import kotlinext.js.jsObject
+import kotlinx.js.jso
 import kotlinx.css.*
 import kotlinx.html.InputType
 import org.w3c.dom.events.Event
@@ -97,7 +97,7 @@ class TestTextFields : RComponent<Props, TestTextFieldsState>() {
             mTextField(label = "Read Only", defaultValue = "Hello World", variant = variant) {
                 css(textField)
 //                attrs.inputProps = object : Props { val readOnly = true } IR Compiler didn't like this way of doing things
-                attrs.inputProps = jsObject {
+                attrs.inputProps = jso {
                     this.asDynamic().readOnly = true
                 }
             }
@@ -124,7 +124,7 @@ class TestTextFields : RComponent<Props, TestTextFieldsState>() {
             mTextFieldMultiLine(label = "Multiline Placeholder", placeholder = "Placeholder Value", helperText = "With pre shrunk label", variant = variant) {
                 css(textField)
 //                attrs.inputLabelProps = object : Props { val shrink = true } IR Compiler didn't like this way of doing things
-                attrs.inputLabelProps = jsObject {
+                attrs.inputLabelProps = jso {
                     this.asDynamic().shrink = true
                 }
             }
@@ -161,7 +161,7 @@ class TestTextFields : RComponent<Props, TestTextFieldsState>() {
             mTextField(label = "Adornment", variant = variant) {
                 css(textField)
                 val adornment = buildElement { mInputAdornment { +"Kg" } }
-                attrs.inputProps = jsObject { this.asDynamic().startAdornment = adornment }
+                attrs.inputProps = jso { this.asDynamic().startAdornment = adornment }
             }
         }
     }

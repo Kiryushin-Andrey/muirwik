@@ -1,6 +1,6 @@
 package com.ccfraser.muirwik.components
 
-import kotlinext.js.Object
+import kotlinx.js.Object
 
 @JsModule("@material-ui/core/locale")
 private external val localeModule: dynamic

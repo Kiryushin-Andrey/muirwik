@@ -1,8 +1,9 @@
 package com.ccfraser.muirwik.components
 
-import kotlinext.js.Object
+import csstype.ClassName
 import kotlinext.js.getOwnPropertyNames
 import kotlinx.css.CssBuilder
+import kotlinx.js.Object
 import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.HTMLTextAreaElement
 import org.w3c.dom.events.Event
@@ -20,7 +21,7 @@ import kotlin.reflect.KClass
  */
 fun <P : PropsWithClassName> RBuilder.createStyled(
     componentType: ComponentType<P>,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<P>? = null,
     ourOwnPropsHandler: StyledHandler<P>? = null
 ) {
@@ -34,7 +35,7 @@ fun <P : PropsWithClassName> RBuilder.createStyled(
 
 fun <P : StyledProps> RBuilder.createStyled(
     componentClass: KClass<out RComponent<P, State>>,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<P>? = null,
     ourOwnPropsHandler: StyledHandler<P>? = null
 ) {

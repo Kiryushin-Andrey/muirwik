@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.list
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.mIcon
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -15,7 +16,7 @@ val listItemIconComponentType: ComponentType<MButtonBaseProps> = listItemIconMod
 
 fun RBuilder.mListItemIcon(
     iconName: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MButtonBaseProps>? = null
 ) {
     createStyled(listItemIconComponentType, className, handler) {

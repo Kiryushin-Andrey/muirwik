@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.card
 
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -17,7 +18,7 @@ private val cardActionAreaComponentType: ComponentType<MButtonBaseProps> = cardA
 fun RBuilder.mCardActionArea(
     onClick: ((Event) -> Unit)? = null,
     disabled: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MButtonBaseProps>? = null
 ) {
     createStyled(cardActionAreaComponentType, className, handler) {

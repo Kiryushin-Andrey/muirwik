@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.table
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -76,7 +77,7 @@ fun RBuilder.mTableCell(
     colSpan: Int? = null,
     component: String? = null,
     scope: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTableCellProps>? = null
 ) {
     createStyled(TableCellComponentType, className, handler) {

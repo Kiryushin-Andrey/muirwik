@@ -6,6 +6,7 @@ import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.form.MFormControlVariant
 import com.ccfraser.muirwik.components.form.MFormLabelProps
 import com.ccfraser.muirwik.components.form.MLabelMargin
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactNode
@@ -38,7 +39,7 @@ fun RBuilder.mInputLabel (
     disableAnimation: Boolean = false,
     margin: MLabelMargin? = null,
     component: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MInputLabelProps>? = null
 ) {
     createStyled(inputLabelComponentType, className, handler) {

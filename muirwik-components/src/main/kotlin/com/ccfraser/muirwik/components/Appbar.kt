@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -26,7 +27,7 @@ var MAppBarProps.position by EnumPropToString(MAppBarPosition.values())
 fun RBuilder.mAppBar(
     color: MAppBarColor = MAppBarColor.primary,
     position: MAppBarPosition = MAppBarPosition.fixed,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MAppBarProps>? = null
 ) {
     createStyled(appBarComponentType, className, handler) {

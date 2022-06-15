@@ -74,7 +74,12 @@ class TestDialogs : RComponent<Props, State>() {
 
             // Yay, this works with no warning... just have to use a different RBuilder or addAsChild = false!!
 //            childList.add(cloneElement(RBuilder().mSlide(direction = SlideTransitionDirection.up, handler = {}), props))
-            childList.add(cloneElement(buildElement { mSlide(direction = SlideTransitionDirection.down) }, props))
+            childList.add(
+                cloneElement(
+                    buildElements(RBuilder()) { mSlide(direction = SlideTransitionDirection.down) }.unsafeCast<ReactElement<MTransitionProps>>(),
+                    props
+                )
+            )
         }
     }
 

@@ -5,12 +5,13 @@ import com.ccfraser.muirwik.components.dialog.ModalOnCloseReason
 import com.ccfraser.muirwik.components.dialog.onClose
 import com.ccfraser.muirwik.components.transitions.TransitionComponentDelegate
 import com.ccfraser.muirwik.components.transitions.TransitionDurationWithAutoDelegate
-import kotlinext.js.Object
+import csstype.ClassName
+import kotlinx.js.Object
 import org.w3c.dom.Node
 import org.w3c.dom.events.Event
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import react.ReactElement
 import styled.StyledHandler
 
@@ -114,18 +115,18 @@ var MPopoverProps.transitionDuration by TransitionDurationWithAutoDelegate()
  * Note setting maxWidth to null will disable maxWidth (i.e. pass false to the underlying Material UI component)
  */
 fun RBuilder.mPopover(
-        open: Boolean = false,
-        container: ReactElement? = null,
-        anchorOriginHorizontal: MPopoverHorizontalPosition = MPopoverHorizontalPosition.left,
-        anchorOriginVertical: MPopoverVerticalPosition = MPopoverVerticalPosition.top,
-        hideBackdrop: Boolean = false,
-        keepMounted: Boolean = false,
-        closeAfterTransition: Boolean = false,
-        onBackdropClick: SimpleEvent? = null,
-        onClose: ((Event, reason: ModalOnCloseReason) -> Unit)? = null,
-        onEscapeKeyDown: SimpleEvent? = null,
-        className: String? = null,
-        handler: StyledHandler<MPopoverProps>
+    open: Boolean = false,
+    container: ReactElement<*>? = null,
+    anchorOriginHorizontal: MPopoverHorizontalPosition = MPopoverHorizontalPosition.left,
+    anchorOriginVertical: MPopoverVerticalPosition = MPopoverVerticalPosition.top,
+    hideBackdrop: Boolean = false,
+    keepMounted: Boolean = false,
+    closeAfterTransition: Boolean = false,
+    onBackdropClick: SimpleEvent? = null,
+    onClose: ((Event, reason: ModalOnCloseReason) -> Unit)? = null,
+    onEscapeKeyDown: SimpleEvent? = null,
+    className: ClassName? = null,
+    handler: StyledHandler<MPopoverProps>
 ) {
     createStyled(popoverComponentType, className, handler) {
         attrs.anchorOriginHorizontal = anchorOriginHorizontal

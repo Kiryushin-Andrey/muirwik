@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.table
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.button.MIconButtonProps
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.Node
 import org.w3c.dom.events.Event
 import react.ComponentType
@@ -48,7 +49,7 @@ fun RBuilder.mTablePagination(
     rowsPerPage: Int? = null,
     rowsPerPageOptions: Array<Int>? = null,
     selectProps: Props? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTablePaginationProps>? = null
 ) {
     createStyled(tablePaginationComponentType, className, handler) {

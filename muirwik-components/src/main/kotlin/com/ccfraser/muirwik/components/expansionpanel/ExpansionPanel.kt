@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.expansionpanel
 
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -27,7 +28,7 @@ fun RBuilder.mExpansionPanel(
 	defaultExpanded: Boolean = false,
 	disabled: Boolean = false,
 	onChange: ((Event, Boolean) -> Unit)? = null,
-	className: String? = null,
+	className: ClassName? = null,
 	handler: StyledHandler<MExpansionPanelProps>? = null
 ) {
 	createStyled(expansionPanelComponentType, className, handler) {

@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.list
 import com.ccfraser.muirwik.components.MTypographyProps
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -17,9 +18,9 @@ val listItemTextComponentType: ComponentType<MListItemTextProps> = listItemTextM
 external interface MListItemTextProps : MButtonBaseProps {
     var disableTypography: Boolean
     var inset: Boolean
-    var primary: ReactElement
+    var primary: ReactElement<*>
     var primaryTypographyProps: MTypographyProps
-    var secondary: ReactElement
+    var secondary: ReactElement<*>
     var secondaryTypographyProps: MTypographyProps
 }
 
@@ -31,14 +32,14 @@ fun RBuilder.mListItemText(
     secondary: String? = null,
     inset: Boolean = false,
     disableTypography: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListItemTextProps>? = null
 ) {
     @Suppress("UnsafeCastFromDynamic")
-    val primaryAsElement: ReactElement = primary.asDynamic()
+    val primaryAsElement: ReactElement<*> = primary.asDynamic()
 
     @Suppress("UnsafeCastFromDynamic")
-    val secondaryAsElement: ReactElement? = secondary?.asDynamic()
+    val secondaryAsElement: ReactElement<*>? = secondary?.asDynamic()
 
     mListItemText(
         primaryAsElement,
@@ -54,11 +55,11 @@ fun RBuilder.mListItemText(
  * strings instead.
  */
 fun RBuilder.mListItemText(
-    primary: ReactElement? = null,
-    secondary: ReactElement? = null,
+    primary: ReactElement<*>? = null,
+    secondary: ReactElement<*>? = null,
     inset: Boolean = false,
     disableTypography: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MListItemTextProps>? = null
 ) {
     createStyled(listItemTextComponentType, className, handler) {

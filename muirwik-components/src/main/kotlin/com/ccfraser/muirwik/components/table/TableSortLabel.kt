@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.table
 
 import com.ccfraser.muirwik.components.EnumPropToString
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -26,7 +27,7 @@ external interface MTableSortLabelProps : StyledProps {
     var active: Boolean
 
     @JsName("IconComponent")
-    var iconFunction: (() -> ReactElement)?
+    var iconFunction: (() -> ReactElement<*>)?
 
     var onClick: (Event) -> Unit
 }
@@ -36,8 +37,8 @@ fun RBuilder.mTableSortLabel(
     active: Boolean = false,
     direction: MTableSortLabelDirection = MTableSortLabelDirection.desc,
     onClick: ((event: Event) -> Unit)? = null,
-    iconFunction: (() -> ReactElement)? = null,
-    className: String? = null,
+    iconFunction: (() -> ReactElement<*>)? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTableSortLabelProps>? = null
 ) {
     createStyled(tableSortLabelComponentType, className, handler) {
@@ -53,8 +54,8 @@ fun RBuilder.mTableSortLabel(
     active: Boolean = false,
     direction: MTableSortLabelDirection = MTableSortLabelDirection.desc,
     onClick: ((event: Event) -> Unit)? = null,
-    iconFunction: (() -> ReactElement)? = null,
-    className: String? = null,
+    iconFunction: (() -> ReactElement<*>)? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTableSortLabelProps>? = null
 ) {
     createStyled(tableSortLabelComponentType, className, handler) {

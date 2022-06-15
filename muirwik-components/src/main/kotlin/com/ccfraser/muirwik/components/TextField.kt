@@ -1,11 +1,12 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.form.*
+import csstype.ClassName
 import kotlinx.html.InputType
 import org.w3c.dom.events.Event
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import styled.StyledElementBuilder
 import styled.StyledHandler
 
@@ -83,7 +84,7 @@ fun RBuilder.mTextField(
     autoComplete: String? = null,
     id: String? = null,
     name: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTextFieldProps>? = null
 ) {
     createStyled(textFieldComponentType, className, handler) {
@@ -110,7 +111,7 @@ fun RBuilder.mTextFieldMultiLine(
     rowsMax: Int? = null,
     id: String? = null,
     name: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTextFieldProps>? = null
 ) {
     createStyled(textFieldComponentType, className, handler) {
@@ -139,7 +140,7 @@ fun RBuilder.mTextFieldSelect(
     autoComplete: String? = null,
     id: String? = null,
     name: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTextFieldProps>? = null
 ) {
     createStyled(textFieldComponentType, className, handler) {

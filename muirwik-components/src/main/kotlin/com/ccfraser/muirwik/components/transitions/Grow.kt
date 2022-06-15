@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.transitions
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -18,7 +19,7 @@ var MGrowProps.timeout by TransitionDurationWithAutoDelegate()
 fun RBuilder.mGrow(
     show: Boolean = false,
     timeout: TransitionDurationWithAuto? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MGrowProps>? = null
 ) {
     createStyled(growComponentType, className, handler) {

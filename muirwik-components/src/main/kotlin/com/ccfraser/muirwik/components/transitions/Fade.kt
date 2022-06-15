@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.transitions
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -18,7 +19,7 @@ var MFadeProps.timeout by TransitionDurationDelegate()
 fun RBuilder.mFade(
     show: Boolean = false,
     timeout: TransitionDuration? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFadeProps>? = null
 ) {
     createStyled(fadeComponentType, className, handler) {

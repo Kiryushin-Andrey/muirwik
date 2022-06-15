@@ -7,7 +7,7 @@ import com.ccfraser.muirwik.components.lab.mTreeView
 import com.ccfraser.muirwik.components.mIcon
 import com.ccfraser.muirwik.components.mTypography
 import com.ccfraser.muirwik.components.spacingUnits
-import kotlinext.js.Object
+import kotlinx.js.Object
 import kotlinx.css.flexGrow
 import kotlinx.css.height
 import kotlinx.css.marginBottom

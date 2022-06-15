@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.input
 import com.ccfraser.muirwik.components.EnumPropToStringNullable
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.form.MFormControlVariant
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -32,7 +33,7 @@ fun RBuilder.mInputAdornment(
     disablePointerEvents: Boolean = false,
     disableTypography: Boolean = false,
     variant: MFormControlVariant? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MInputAdornmentProps>? = null
 ) {
     createStyled(inputAdornmentComponentType, className, handler) {

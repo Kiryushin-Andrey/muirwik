@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.form.MFormControlProps
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -21,7 +22,7 @@ fun RBuilder.mTextAreaAutosize(
     rowsMin: Int = 1,
     rowsMax: Int? = null,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MTextAreaAutosizeProps>? = null
 ) {
     createStyled(textAreaAutosizeComponentType, className, handler) {

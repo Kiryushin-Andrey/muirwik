@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.list
 
 import com.ccfraser.muirwik.components.button.MButtonBaseProps
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -14,7 +15,7 @@ private external val listItemSecondaryActionModule: dynamic
 val listItemSecondaryActionComponentType: ComponentType<MButtonBaseProps> = listItemSecondaryActionModule.default
 
 fun RBuilder.mListItemSecondaryAction(
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MButtonBaseProps>? = null
 ) {
     createStyled(listItemSecondaryActionComponentType, className, handler)

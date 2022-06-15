@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -36,7 +37,7 @@ fun RBuilder.mLinearProgress(
     variant: MLinearProgressVariant = MLinearProgressVariant.indeterminate,
     color: MLinearProgressColor = MLinearProgressColor.primary,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MLinearProgressProps>? = null
 ) {
     createStyled(linearProgressComponentType, className, handler) {

@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components
 import com.ccfraser.muirwik.components.form.MFormControlLabelProps
 import com.ccfraser.muirwik.components.form.MLabelPlacement
 import com.ccfraser.muirwik.components.form.mFormControlLabel
+import csstype.ClassName
 import kotlinx.html.InputType
 import org.w3c.dom.events.Event
 import react.*
@@ -18,12 +19,12 @@ private val checkboxComponentType: ComponentType<MCheckboxProps> = checkboxModul
 
 external interface MCheckboxProps : StyledPropsWithCommonAttributes {
     var checked: Boolean
-    var checkedIcon: ReactElement
+    var checkedIcon: ReactElement<*>
     var disabled: Boolean
     var disableRipple: Boolean
-    var icon: ReactElement?
+    var icon: ReactElement<*>?
     var indeterminate: Boolean
-    var indeterminateIcon: ReactElement
+    var indeterminateIcon: ReactElement<*>
     var inputProps: Props?
     var onChange: ((Event, Boolean) -> Unit)
     var required: Boolean
@@ -36,17 +37,17 @@ var MCheckboxProps.color by EnumPropToString(MOptionColor.values())
  * Checkbox without a label. If you want a simple checkbox that is wrapped in a label, use [mCheckboxWithLabel]
  */
 fun RBuilder.mCheckbox(
-        checked: Boolean = false,
-        color: MOptionColor = MOptionColor.secondary,
-        disabled: Boolean = false,
-        required: Boolean? = null,
-        indeterminate: Boolean = false,
-        onChange: ((event: Event, checked: Boolean) -> Unit)? = null,
-        id: String? = null,
-        inputProps: Props? = null,
-        value: String? = null,
-        className: String? = null,
-        handler: StyledHandler<MCheckboxProps>? = null
+    checked: Boolean = false,
+    color: MOptionColor = MOptionColor.secondary,
+    disabled: Boolean = false,
+    required: Boolean? = null,
+    indeterminate: Boolean = false,
+    onChange: ((event: Event, checked: Boolean) -> Unit)? = null,
+    id: String? = null,
+    inputProps: Props? = null,
+    value: String? = null,
+    className: ClassName? = null,
+    handler: StyledHandler<MCheckboxProps>? = null
 ) {
      createStyled(checkboxComponentType, className, handler) {
          attrs.checked = checked
@@ -78,7 +79,7 @@ fun RBuilder.mCheckboxWithLabel(
     id: String? = null,
     inputProps: Props? = null,
     value: String? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFormControlLabelProps>? = null
 ) {
     val checkBox = buildElement {

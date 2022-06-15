@@ -25,7 +25,7 @@ external interface MInputBaseNoOnChangeProps : StyledPropsWithCommonAttributes {
     var autoFocus: Boolean
     var defaultValue: String
     var disabled: Boolean
-    var endAdornment: ReactElement
+    var endAdornment: ReactElement<*>
     var error: Boolean
     var fullWidth: Boolean
     var inputComponent: String
@@ -39,7 +39,7 @@ external interface MInputBaseNoOnChangeProps : StyledPropsWithCommonAttributes {
     var rows: Int
     var rowsMax: Int
     var rowsMin: Int
-    var startAdornment: ReactElement
+    var startAdornment: ReactElement<*>
 
     @JsName("type")
     var rawType: String

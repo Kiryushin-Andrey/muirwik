@@ -8,6 +8,7 @@ import com.ccfraser.muirwik.components.styles.Breakpoint
 import com.ccfraser.muirwik.components.transitions.TransitionComponent
 import com.ccfraser.muirwik.components.transitions.TransitionComponentDelegate
 import com.ccfraser.muirwik.components.transitions.TransitionDurationDelegateNullable
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.*
 import styled.StyledHandler
@@ -75,7 +76,7 @@ fun RBuilder.mDialog(
 //        transitionDuration: TransitionTimeout? = null,
     transitionProps: Props? = null,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MDialogProps>
 ) {
     createStyled(dialogComponentType, className, handler) {

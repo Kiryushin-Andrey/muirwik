@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.transitions.TransitionComponentDelegate
 import com.ccfraser.muirwik.components.transitions.TransitionDurationDelegate
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.*
 import styled.StyledHandler
@@ -30,7 +31,7 @@ enum class MSnackbarOnCloseReason {
 }
 
 external interface MSnackbarProps : StyledProps {
-    var action: ReactElement
+    var action: ReactElement<*>
 
     var autoHideDuration: Int
 
@@ -42,7 +43,7 @@ external interface MSnackbarProps : StyledProps {
 
     var disableWindowBlurListener: Boolean
     var key: String
-    var message: ReactElement
+    var message: ReactElement<*>
     var onEnter: Event
     var onEntered: Event
     var onEntering: Event
@@ -66,7 +67,7 @@ var MSnackbarProps.transitionDuration by TransitionDurationDelegate()
  * Base builder for Snackbar.
  */
 fun RBuilder.mSnackbar(
-    message: ReactElement?,
+    message: ReactElement<*>?,
     open: Boolean? = null,
     onClose: ((Event, MSnackbarOnCloseReason) -> Unit)? = null,
     horizAnchor: MSnackbarHorizAnchor = MSnackbarHorizAnchor.center,
@@ -74,7 +75,7 @@ fun RBuilder.mSnackbar(
     key: String? = null,
     autoHideDuration: Int? = null,
     resumeHideDuration: Int? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSnackbarProps>? = null
 ) {
     createStyled(snackbarComponentType, className, handler) {
@@ -102,11 +103,11 @@ fun RBuilder.mSnackbar(
     autoHideDuration: Int? = null,
     resumeHideDuration: Int? = null,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSnackbarProps>? = null
 ) {
     @Suppress("UnsafeCastFromDynamic")
-    val dynamicElement: ReactElement = message.asDynamic()
+    val dynamicElement: ReactElement<*> = message.asDynamic()
     mSnackbar(dynamicElement, open, onClose, horizAnchor, vertAnchor, key, autoHideDuration, resumeHideDuration, className, handler)
 }
 
@@ -123,7 +124,7 @@ fun RBuilder.mSnackbar(
     autoHideDuration: Int? = null,
     resumeHideDuration: Int? = null,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSnackbarProps>? = null
 ) {
     @Suppress("UnsafeCastFromDynamic")

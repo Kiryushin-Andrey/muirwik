@@ -1,8 +1,11 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.styles.Theme
-import kotlinext.js.jsObject
-import react.*
+import kotlinx.js.jso
+import react.ComponentType
+import react.PropsWithChildren
+import react.RBuilder
+import react.RHandler
 
 
 @JsModule("@material-ui/core/styles")
@@ -25,7 +28,7 @@ fun RBuilder.mMuiThemeProvider(
     sheetsManager: Any? = null,
     handler: RHandler<MuiThemeProviderProps>? = null
 ) {
-    child(muiThemeProviderComponentType, jsObject()) {
+    child(muiThemeProviderComponentType, jso()) {
         disableStylesGeneration?.let { attrs.disableStylesGeneration = disableStylesGeneration }
         sheetsManager?.let { attrs.sheetsManager = sheetsManager }
         attrs.theme = theme

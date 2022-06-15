@@ -3,6 +3,7 @@ package com.ccfraser.muirwik.components.accordion
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
 import com.ccfraser.muirwik.components.transitions.TransitionComponentDelegate
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.Props
@@ -35,7 +36,7 @@ fun RBuilder.mAccordion(
     disabled: Boolean = false,
     square: Boolean = false,
     onChange: ((Event, Boolean) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MAccordionProps>? = null
 ) {
     createStyled(accordionComponentType, className, handler) {

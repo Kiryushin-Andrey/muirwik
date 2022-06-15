@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.button
 
 import com.ccfraser.muirwik.components.*
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -45,7 +46,7 @@ fun RBuilder.mIconButton(
     hRefOptions: HRefOptions? = null,
     iconColor: MIconColor? = null,
     edge: MIconEdge? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MIconButtonProps>? = null
 ) {
     createStyled(iconButtonComponentType, className, handler) {

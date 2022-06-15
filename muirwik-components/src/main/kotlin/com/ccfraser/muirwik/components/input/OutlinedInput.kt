@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.input
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import kotlinx.html.InputType
 import org.w3c.dom.events.Event
 import react.ComponentType
@@ -42,7 +43,7 @@ fun RBuilder.mOutlinedInput(
     rows: Int? = null,
     rowsMax: Int? = null,
     onChange: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MOutlinedInputProps>? = null
 ) {
     createStyled(outlinedInputComponentType, className, handler) {

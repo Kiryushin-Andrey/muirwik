@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.dialog
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.RHandler
@@ -16,7 +17,7 @@ private val dialogContentTextComponentType: ComponentType<StyledProps> = dialogC
 
 fun RBuilder.mDialogContentText(
     text: String,
-    className: String? = null,
+    className: ClassName? = null,
     handler: RHandler<StyledProps>? = null
 ) {
     createStyled(dialogContentTextComponentType, className, handler) {

@@ -3,10 +3,11 @@ package com.ccfraser.muirwik.components
 import com.ccfraser.muirwik.components.transitions.MSlideProps
 import com.ccfraser.muirwik.components.transitions.TransitionDuration
 import com.ccfraser.muirwik.components.transitions.TransitionDurationDelegateNullable
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import styled.StyledHandler
 
 
@@ -47,18 +48,18 @@ var MDrawerProps.transitionDuration by TransitionDurationDelegateNullable()
 var MDrawerProps.variant by EnumPropToString(MDrawerVariant.values())
 
 fun RBuilder.mDrawer(
-        open: Boolean = false,
-        anchor: MDrawerAnchor = MDrawerAnchor.left,
-        variant: MDrawerVariant = MDrawerVariant.temporary,
-        onClose: ((Event) -> Unit)? = null,
-        elevation: Int = 16,
-        modalProps: Props? = null,
-        paperProps: MPaperProps? = null,
-        slideProps: MSlideProps? = null,
-        transitionDuration: TransitionDuration? = null,
+    open: Boolean = false,
+    anchor: MDrawerAnchor = MDrawerAnchor.left,
+    variant: MDrawerVariant = MDrawerVariant.temporary,
+    onClose: ((Event) -> Unit)? = null,
+    elevation: Int = 16,
+    modalProps: Props? = null,
+    paperProps: MPaperProps? = null,
+    slideProps: MSlideProps? = null,
+    transitionDuration: TransitionDuration? = null,
 
-        className: String? = null,
-        handler: StyledHandler<MDrawerProps>
+    className: ClassName? = null,
+    handler: StyledHandler<MDrawerProps>
 ) {
     createStyled(drawerComponentType, className, handler) {
         attrs.anchor = anchor

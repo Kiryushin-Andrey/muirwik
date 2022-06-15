@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactNode
@@ -35,7 +36,7 @@ fun RBuilder.mIcon(
     iconName: String,
     color: MIconColor = MIconColor.inherit,
     fontSize: MIconFontSize = MIconFontSize.default,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MIconProps>? = null
 ) {
     createStyled(iconComponentType, className, handler) {

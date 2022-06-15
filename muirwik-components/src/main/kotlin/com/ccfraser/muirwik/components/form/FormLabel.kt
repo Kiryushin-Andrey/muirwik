@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.form
 
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactNode
@@ -33,7 +34,7 @@ fun RBuilder.mFormLabel (
     focused: Boolean? = null,
     filled: Boolean? = null,
     component: String = "label",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFormLabelProps>? = null
 ) {
     createStyled(formLabelComponentType, className, handler) {

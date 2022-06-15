@@ -4,6 +4,7 @@ import com.ccfraser.muirwik.components.*
 import com.ccfraser.muirwik.components.transitions.AutoTransitionDuration
 import com.ccfraser.muirwik.components.transitions.TransitionComponent
 import com.ccfraser.muirwik.components.transitions.TransitionDurationWithAuto
+import csstype.ClassName
 import org.w3c.dom.Node
 import org.w3c.dom.events.Event
 import react.ComponentType
@@ -53,7 +54,7 @@ fun RBuilder.mMenu(
     transitionComponent: TransitionComponent? = null,
     transitionDuration: TransitionDurationWithAuto = AutoTransitionDuration(),
     variant: MMenuVariant = MMenuVariant.selectedMenu,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MMenuProps>
 ) {
     createStyled(menuComponentType, className, handler) {

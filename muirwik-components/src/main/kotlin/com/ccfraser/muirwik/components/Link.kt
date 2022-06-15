@@ -1,5 +1,6 @@
 package com.ccfraser.muirwik.components
 
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import react.ReactNode
@@ -35,7 +36,7 @@ fun RBuilder.mLink(
     underline: MLinkUnderline = MLinkUnderline.hover,
     gutterBottom: Boolean = false,
     noWrap: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MLinkProps>? = null
 ) {
     createStyled(linkComponentType, className, handler) {
@@ -56,7 +57,7 @@ fun RBuilder.mLink(
     underline: MLinkUnderline = MLinkUnderline.hover,
     gutterBottom: Boolean = false,
     noWrap: Boolean = false,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MLinkProps>? = null
 ) {
     mLink(text, HRefOptions(hRef), underline, gutterBottom, noWrap, className, handler)

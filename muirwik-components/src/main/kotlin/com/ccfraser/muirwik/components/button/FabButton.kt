@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.button
 
 import com.ccfraser.muirwik.components.*
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -39,7 +40,7 @@ fun RBuilder.mFab(
     onClick: ((Event) -> Unit)? = null,
     size: MButtonSize = MButtonSize.medium,
     hRefOptions: HRefOptions? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFabProps>? = null
 ) {
     createStyled(fabComponentType, className, handler) {
@@ -72,7 +73,7 @@ fun RBuilder.mFab(
     onClick: ((Event) -> Unit)? = null,
     size: MButtonSize = MButtonSize.medium,
     hRefOptions: HRefOptions? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFabProps>? = null
 ) {
     createStyled(fabComponentType, className, handler) {

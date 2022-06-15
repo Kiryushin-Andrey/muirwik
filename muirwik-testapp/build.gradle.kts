@@ -1,7 +1,7 @@
 import kotlin.math.min
 
 group = "com.ccfraser.muirwik"
-version = "0.9.1-kotlin-1.6.10"
+version = "0.9.1-kotlin-1.6.21"
 description = "Test Application for Muirwik (a Material UI React wrapper written in Kotlin)"
 
 plugins {
@@ -13,11 +13,11 @@ repositories {
 }
 
 dependencies {
-    val kotlinVersion = "1.6.0"
-    val kotlinJsVersion = "pre.268-kotlin-$kotlinVersion"
+    val kotlinVersion = "1.6.21"
+    val kotlinJsVersion = "pre.332-kotlin-$kotlinVersion"
 
     implementation(kotlin("stdlib-js", kotlinVersion))
-    implementation("org.jetbrains.kotlin-wrappers", "kotlin-styled", "5.3.3-$kotlinJsVersion")
+    implementation("org.jetbrains.kotlin-wrappers", "kotlin-styled", "5.3.5-$kotlinJsVersion")
     implementation(npm("react-hot-loader", "^4.12.20"))
     implementation(devNpm("webpack-bundle-analyzer", "^3.8.0"))
 

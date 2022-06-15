@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.transitions.TransitionDuration
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.ComponentType
 import react.RBuilder
@@ -36,7 +37,7 @@ fun RBuilder.mSwipeableDrawer(
     swipeAreaWidth: Number = 20,
     elevation: Int = 16,
     transitionDuration: TransitionDuration? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSwipeableDrawerProps>
 ) {
     createStyled(swipeableDrawerComponentType, className, handler) {

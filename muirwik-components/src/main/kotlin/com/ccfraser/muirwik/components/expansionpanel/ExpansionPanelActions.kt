@@ -2,6 +2,7 @@ package com.ccfraser.muirwik.components.expansionpanel
 
 import com.ccfraser.muirwik.components.StyledPropsWithCommonAttributes
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -20,7 +21,7 @@ external interface MExpansionPanelActionsProps : StyledPropsWithCommonAttributes
 		"com.ccfraser.muirwik.components.accordion.mAccordionActions"))
 fun RBuilder.mExpansionPanelActions(
 	disableSpacing: Boolean? = null,
-	className: String? = null,
+	className: ClassName? = null,
 	handler: StyledHandler<MExpansionPanelActionsProps>? = null
 ) {
 	createStyled(expansionPanelActionsComponentType, className, handler) {

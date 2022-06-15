@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components
 
-import kotlinext.js.Object
+import csstype.ClassName
+import kotlinx.js.Object
 import react.ComponentType
 import react.RBuilder
 import react.ReactElement
@@ -45,7 +46,7 @@ external interface MSliderProps : StyledPropsWithCommonAttributes {
     var value: dynamic
 
     @JsName("ValueLabelComponent")
-    var valueLabelComponent: ReactElement
+    var valueLabelComponent: ReactElement<*>
 
     var valueLabelFormat: (value: Number, index: Number) -> String
 }
@@ -76,11 +77,11 @@ fun RBuilder.mSlider(
     onChangeCommitted: ((event: Object, value: Number) -> Unit)? = null,
     getAriaValueText: ((value: Number, index: Number) -> String)? = null,
 
-    valueLabelComponent: ReactElement? = null,
+    valueLabelComponent: ReactElement<*>? = null,
     valueLabelDisplay: MSliderValueLabelDisplay = MSliderValueLabelDisplay.off,
     valueLabelFormat: ((value: Number, index: Number) -> String)? = null,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSliderProps>? = null
 ) {
     createStyled(sliderComponentType, className, handler) {
@@ -116,10 +117,10 @@ fun RBuilder.mSliderWithRange(
     onChangeCommitted: ((event: Object, value: Number) -> Unit)? = null,
     getAriaValueText: ((value: Number, index: Number) -> String)? = null,
 
-    valueLabelComponent: ReactElement? = null,
+    valueLabelComponent: ReactElement<*>? = null,
     valueLabelDisplay: MSliderValueLabelDisplay = MSliderValueLabelDisplay.off,
     valueLabelFormat: ((value: Number, index: Number) -> String)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MSliderProps>? = null
 ) {
     createStyled(sliderComponentType, className, handler) {
@@ -150,7 +151,7 @@ private fun setCommonAttrs(
     onChange: ((event: Object, value: Number) -> Unit)?,
     onChangeCommitted: ((event: Object, value: Number) -> Unit)?,
     getAriaValueText: ((value: Number, index: Number) -> String)?,
-    valueLabelComponent: ReactElement?,
+    valueLabelComponent: ReactElement<*>?,
     valueLabelDisplay: MSliderValueLabelDisplay,
     valueLabelFormat: ((value: Number, index: Number) -> String)?
 ) {

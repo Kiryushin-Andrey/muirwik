@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components.input
 
 import com.ccfraser.muirwik.components.createStyled
+import csstype.ClassName
 import kotlinx.html.InputType
 import org.w3c.dom.events.Event
 import react.ComponentType
@@ -40,7 +41,7 @@ fun RBuilder.mFilledInput(
     rows: Int? = null,
     rowsMax: Int? = null,
     onChange: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MFilledInputProps>? = null
 ) {
     createStyled(filledInputComponentType, className, handler) {

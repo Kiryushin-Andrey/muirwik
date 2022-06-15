@@ -1,6 +1,7 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.styles.Breakpoint
+import csstype.ClassName
 import react.ComponentType
 import react.RBuilder
 import styled.StyledHandler
@@ -29,7 +30,7 @@ fun RBuilder.mContainer(
     fixed: Boolean = false,
     disableGutters: Boolean = false,
     component: String = "div",
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MContainerProps>? = null
 ) {
     createStyled(containerComponentType, className, handler) {

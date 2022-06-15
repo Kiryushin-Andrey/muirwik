@@ -5,6 +5,7 @@ import com.ccfraser.muirwik.components.list.MListItemProps
 import com.ccfraser.muirwik.components.list.mListItemAvatar
 import com.ccfraser.muirwik.components.list.mListItemIcon
 import com.ccfraser.muirwik.components.list.mListItemText
+import csstype.ClassName
 import org.w3c.dom.events.Event
 import react.*
 import styled.StyledHandler
@@ -36,7 +37,7 @@ fun RBuilder.mMenuItem(
     disabled: Boolean = false,
     hRefOptions: HRefOptions? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MMenuItemProps>? = null
 ) {
     mMenuItem(selected, button = true, key = key, value = value, divider = divider, disabled = disabled,
@@ -68,7 +69,7 @@ fun RBuilder.mMenuItemWithIcon(
     useAvatar: Boolean = false,
     hRefOptions: HRefOptions? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MMenuItemProps>? = null
 ) {
     mMenuItem(selected, button = true, key = key, value = value, divider = divider, disabled = disabled,
@@ -105,7 +106,7 @@ fun RBuilder.mMenuItemWithAvatar(
     disabled: Boolean = false,
     hRefOptions: HRefOptions? = null,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MMenuItemProps>? = null
 ) {
     mMenuItem(selected, button = true, key = key, value = value, divider = divider, disabled = disabled,
@@ -143,7 +144,7 @@ fun RBuilder.mMenuItem(
     dense: Boolean = false,
     disableGutters: Boolean = false,
     onClick: ((Event) -> Unit)? = null,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MMenuItemProps>? = null
 ) {
     createStyled(menuItemComponentType, className, handler) {

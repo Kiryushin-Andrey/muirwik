@@ -1,9 +1,10 @@
 package com.ccfraser.muirwik.components
 
 import com.ccfraser.muirwik.components.styles.Breakpoint
+import csstype.ClassName
 import react.ComponentType
-import react.RBuilder
 import react.Props
+import react.RBuilder
 import styled.StyledHandler
 import styled.StyledProps
 import kotlin.properties.ReadWriteProperty
@@ -229,7 +230,7 @@ fun RBuilder.mGridContainer(
     justify: MGridJustify = MGridJustify.flexStart,
     wrap: MGridWrap = MGridWrap.wrap,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MGridProps>? = null
 ) {
     createStyled(gridComponentType, className, handler) {
@@ -250,7 +251,7 @@ fun RBuilder.mGridItem(
     xl: MGridSize = MGridSize.cellsFalse,
     zeroMinWidth: Boolean? = null,
 
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MGridProps>? = null
 ) {
     createStyled(gridComponentType, className, handler) {
@@ -266,7 +267,7 @@ fun RBuilder.mGridItem(
 
 fun RBuilder.mGridItem(
     breakpoints: MGridBreakpoints,
-    className: String? = null,
+    className: ClassName? = null,
     handler: StyledHandler<MGridProps>? = null
 ) {
     mGridItem(
