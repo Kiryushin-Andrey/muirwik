@@ -1,5 +1,5 @@
 group = "com.ccfraser.muirwik"
-version = "0.9.1"
+version = "0.9.1-kotlin-1.6.0"
 description = "Muirwik Components - a Material UI React wrapper written in Kotlin"
 
 plugins {
@@ -62,14 +62,14 @@ val publicationName = "kotlin"
 publishing {
     repositories {
         mavenLocal()
-        maven {
-            name = "sonatype"
-            setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            credentials {
-                username = extra["ossrhUsername"]?.toString()
-                password = extra["ossrhPassword"]?.toString()
-            }
-        }
+//        maven {
+//            name = "sonatype"
+//            setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+//            credentials {
+//                username = extra["ossrhUsername"]?.toString()
+//                password = extra["ossrhPassword"]?.toString()
+//            }
+//        }
     }
 
     publications {
@@ -100,9 +100,9 @@ publishing {
                 }
             }
         }
-        signing {
-            sign(publishing.publications[publicationName])
-        }
+//        signing {
+//            sign(publishing.publications[publicationName])
+//        }
     }
 }
 
